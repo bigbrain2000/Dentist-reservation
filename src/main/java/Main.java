@@ -14,8 +14,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         UserService.initDatabase();
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("user_registration.fxml"));
-
+        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("user_login.fxml"));
         primaryStage.getIcons().add(new Image("images/toothPicture.png"));
         primaryStage.setTitle("Dentist reservation");
         primaryStage.setScene(new Scene(root, 655, 500));

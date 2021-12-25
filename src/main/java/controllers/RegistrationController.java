@@ -3,7 +3,6 @@ package controllers;
 import exceptions.FieldNotCompletedException;
 import exceptions.UsernameAlreadyExistsException;
 import exceptions.WeakPasswordException;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -12,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import org.jetbrains.annotations.NotNull;
 import services.UserService;
 import java.io.IOException;
 
@@ -52,14 +52,14 @@ public class RegistrationController {
     @FXML
     private Text registrationMessage;
 
-    private String[] roleTypes = {"Patient", "Dentist"};
+    private final String[] ROLETYPES = {"Patient", "Dentist"};
     public void initialize() {
-        role.getItems().addAll(roleTypes);
+        role.getItems().addAll(ROLETYPES);
         role.setValue("Patient");
     }
 
     @FXML
-    public void handleRegisterAction(javafx.event.ActionEvent login)  {
+    public void handleRegisterAction()  {
         try {
             InsertUserDataIntoDB();
             registrationMessage.setText("Account created successfully!");
@@ -89,17 +89,17 @@ public class RegistrationController {
         addressField.clear();
     }
 
-    private void getRegistrationMessageForUsernameAlreadyExistsException(UsernameAlreadyExistsException e) {
+    private void getRegistrationMessageForUsernameAlreadyExistsException(@NotNull UsernameAlreadyExistsException e) {
         registrationMessage.setText(e.getMessage());
         passwordField.clear();
     }
 
-    private void getRegistrationMessageForWeakPasswordException(WeakPasswordException e) {
+    private void getRegistrationMessageForWeakPasswordException(@NotNull WeakPasswordException e) {
         registrationMessage.setText(e.getMessage());
         passwordField.clear();
     }
 
-    private void getRegistrationMessageForFieldNotCompletedException(FieldNotCompletedException e) {
+    private void getRegistrationMessageForFieldNotCompletedException(@NotNull FieldNotCompletedException e) {
         registrationMessage.setText(e.getMessage());
     }
 
@@ -107,24 +107,24 @@ public class RegistrationController {
         LoadFXML(back);
     }
 
-    private void LoadFXML(ActionEvent back) throws IOException {
+    private void LoadFXML(@NotNull javafx.event.ActionEvent event) throws IOException {
         FXMLLoader Loader = new FXMLLoader();
         Loader.setLocation(getClass().getClassLoader().getResource("user_login.fxml"));
-        Parent viewUserlogin = Loader.load();
-        Scene loginScene = new Scene(viewUserlogin, 650, 450);
-        Stage window = (Stage) ((Node) back.getSource()).getScene().getWindow();
+        Parent viewUserLogin = Loader.load();
+        Scene loginScene = new Scene(viewUserLogin, 655, 500);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(loginScene);
         window.show();
     }
 
     @FXML
-    public void minimizeWindow(javafx.event.ActionEvent min) {
+    public void minimizeWindow(@NotNull javafx.event.ActionEvent min) {
         Stage window = (Stage) ((Node) min.getSource()).getScene().getWindow();
         window.setIconified(true);
     }
 
     @FXML
-    public void closeWindow(javafx.event.ActionEvent close) {
+    public void closeWindow(@NotNull javafx.event.ActionEvent close) {
         Stage window = (Stage) ((Node) close.getSource()).getScene().getWindow();
         window.close();
     }
