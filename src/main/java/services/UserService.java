@@ -4,6 +4,8 @@ import exceptions.*;
 import model.User;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
+import org.jetbrains.annotations.Nullable;
+
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -68,7 +70,6 @@ public class UserService {
             throw new WeakPasswordException("8 characters");
     }
 
-
     private static void checkIfPasswordContainsAtLeast1Digit(String password) throws WeakPasswordException {
         if (!stringContainsNumber(password))
             throw new WeakPasswordException("one digit");
@@ -77,6 +78,54 @@ public class UserService {
     private static void checkIfPasswordContainsAtLeast1UpperCase(String password) throws WeakPasswordException {
         if (!stringContainsUpperCase(password))
             throw new WeakPasswordException("one upper case");
+    }
+
+    public static void checkPassword(String password, String username) throws WrongPasswordException {
+        boolean flag = false;
+        for (User user : userRepository.find())
+            if (Objects.equals(username, user.getUsername()))
+                if (Objects.equals(encodePassword(username,password), user.getPassword()))
+                    flag = true;
+
+        if(!flag)
+            throw new WrongPasswordException();
+    }
+
+    public static void checkUserDoesAlreadyExist(String username) throws UsernameDoesNotExistsException {
+        boolean flag = false;
+        for (User user : userRepository.find())
+            if (Objects.equals(username, user.getUsername())) {
+                flag = true;
+                break;
+            }
+
+        if(!flag)
+            throw new UsernameDoesNotExistsException(username);
+    }
+
+    public static int loginUser(String username, String password) throws UsernameDoesNotExistsException, WrongPasswordException, FieldNotCompletedException {
+        checkUserDoesAlreadyExist(username);
+        checkPassword(password,username);
+
+        String encryptedPassword = encodePassword(username, password);
+
+        Integer x = getValueBasedOnRoleSelected(username, encryptedPassword);
+        if (x != null) return x;
+
+        return 0;
+    }
+
+    @Nullable
+    private static Integer getValueBasedOnRoleSelected(String username, String encryptedPassword) {
+        for (User user : UserService.userRepository.find())
+            if (Objects.equals(username, user.getUsername()) && Objects.equals(encryptedPassword, user.getPassword()))
+                if (user.getRole().equals("Patient")) {
+                    return 1;
+                } else {
+                    return 2;
+                }
+
+        return null;
     }
 
     static String encodePassword(String salt, String password) {
