@@ -15,7 +15,7 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="655.0" style="-fx-border-width: 4; -fx-background-color: #00BFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RegistrationController">
     <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="31.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
-        <Image url="@images/toothPicture.png" />
+        <Image url="@images/ToothPicture.png" />
     </ImageView>
     <Label layoutX="273.0" layoutY="27.0" prefHeight="27.0" prefWidth="302.0" style="-fx-background-color: transparent;" text="Welcome to our Dental Application">
         <font>

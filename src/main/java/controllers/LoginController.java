@@ -40,7 +40,8 @@ public class LoginController {
     private Text registrationMessage;
 
     @FXML
-    void handleLoginAction(javafx.event.ActionEvent event) {
+    public void handleLoginAction(javafx.event.ActionEvent event) {
+
         String username = usernameField.getText();
         String password = passwordField.getText();
 
@@ -50,12 +51,22 @@ public class LoginController {
 
             if (aux == 1) {
                 Loader.setLocation(getClass().getClassLoader().getResource("Patient.fxml"));
+                clearFields();
+            } else if (aux == 2) {
+                Loader.setLocation(getClass().getClassLoader().getResource("dentist_Page.fxml"));
+                clearFields();
+            }
+
+            Parent viewUserLogin = Loader.load();
+            Scene loginScene = new Scene(viewUserLogin, 670, 500);
+
             } else if (aux == 2) {
                 Loader.setLocation(getClass().getClassLoader().getResource("Dentist.fxml"));
             }
 
             Parent viewUserLogin = Loader.load();
             Scene loginScene = new Scene(viewUserLogin, 655, 500);
+
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(loginScene);
             window.show();
@@ -69,6 +80,11 @@ public class LoginController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+    public void clearFields(){
+        usernameField.clear();
+        passwordField.clear();
     }
 
     private void getRegistrationMessageForWrongPasswordException(@NotNull WrongPasswordException e) {
@@ -96,13 +112,13 @@ public class LoginController {
     }
 
     @FXML
-    void minimizeWindow(@NotNull ActionEvent event) {
+    public void minimizeWindow(@NotNull ActionEvent event) {
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setIconified(true);
     }
 
     @FXML
-    void closeWindow(@NotNull ActionEvent event) {
+    public void closeWindow(@NotNull ActionEvent event) {
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.close();
     }
