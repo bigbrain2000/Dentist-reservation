@@ -48,7 +48,6 @@ public class LoginController {
         try {
             int aux = UserService.loginUser(username, password);
             FXMLLoader Loader = new FXMLLoader();
-
             if (aux == 1) {
                 Loader.setLocation(getClass().getClassLoader().getResource("Patient.fxml"));
                 clearFields();
@@ -56,17 +55,8 @@ public class LoginController {
                 Loader.setLocation(getClass().getClassLoader().getResource("dentist_Page.fxml"));
                 clearFields();
             }
-
-            Parent viewUserLogin = Loader.load();
-            Scene loginScene = new Scene(viewUserLogin, 670, 500);
-
-            } else if (aux == 2) {
-                Loader.setLocation(getClass().getClassLoader().getResource("Dentist.fxml"));
-            }
-
             Parent viewUserLogin = Loader.load();
             Scene loginScene = new Scene(viewUserLogin, 655, 500);
-
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(loginScene);
             window.show();
