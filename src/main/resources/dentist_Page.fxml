@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="679.0" style="-fx-background-color: #00BFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.DentistPageController">
+   <children>
+      <VBox prefHeight="500.0" prefWidth="188.0">
+         <children>
+            <Label prefHeight="35.0" prefWidth="188.0" style="-fx-border-color: #008000; -fx-border-width: 6;" text="    Dentist options">
+               <font>
+                  <Font name="System Bold" size="18.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="30.0" />
+               </VBox.margin>
+            </Label>
+            <Button fx:id="addDentists" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" text="Add dentists">
+               <graphic>
+                  <ImageView fitHeight="39.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/AddDentistsLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets top="70.0" />
+               </VBox.margin>
+               <padding>
+                  <Insets left="-40.0" />
+               </padding>
+            </Button>
+            <Button fx:id="viewProfileButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" text="View profile">
+               <graphic>
+                  <ImageView fitHeight="38.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/ProfileLogo.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="-40.0" />
+               </padding>
+            </Button>
+            <Button fx:id="addServicesButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" text="Add services">
+               <graphic>
+                  <ImageView fitHeight="33.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/AddServices.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <padding>
+                  <Insets left="-35.0" />
+               </padding>
+            </Button>
+            <Button fx:id="logoutButton" layoutX="10.0" layoutY="108.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" text="Log out">
+               <graphic>
+                  <ImageView fitHeight="39.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/LogoutLogo.jpg" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <padding>
+                  <Insets left="-65.0" />
+               </padding>
+            </Button>
+            <Button fx:id="addAppointmentsButton" layoutX="10.0" layoutY="108.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" text="Add appointments">
+               <graphic>
+                  <ImageView fitHeight="35.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/AddDentistsLogo.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <HBox layoutX="567.0" prefHeight="40.0" prefWidth="98.0">
+         <children>
+            <Button fx:id="minimizeField" alignment="TOP_RIGHT" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#minimizeWindow" prefHeight="4.0" prefWidth="20.0" style="-fx-background-color: transparent;" text="-">
+               <HBox.margin>
+                  <Insets left="30.0" top="-5.0" />
+               </HBox.margin>
+               <padding>
+                  <Insets right="10.0" />
+               </padding>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="closeField" alignment="TOP_RIGHT" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#closeWindow" style="-fx-background-color: transparent;" text="X">
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </Button>
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>

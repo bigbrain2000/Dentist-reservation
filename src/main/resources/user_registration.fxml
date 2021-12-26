@@ -15,7 +15,7 @@
 
 <AnchorPane prefHeight="500.0" prefWidth="655.0" style="-fx-border-width: 4; -fx-background-color: #00BFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.RegistrationController">
     <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="31.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true">
-        <Image url="@images/toothPicture.png"/>
+        <Image url="@images/ToothPicture.png" />
     </ImageView>
     <Label layoutX="273.0" layoutY="27.0" prefHeight="27.0" prefWidth="302.0" style="-fx-background-color: transparent;" text="Welcome to our Dental Application">
         <font>
@@ -27,7 +27,10 @@
             <Font size="16.0" />
         </font>
     </TextField>
-    <PasswordField fx:id="passwordField" layoutX="470.0" layoutY="112.0" prefHeight="30.0" prefWidth="149.0" promptText="Password" />
+    <PasswordField fx:id="passwordField" layoutX="470.0" layoutY="107.0" prefHeight="35.0" prefWidth="149.0" promptText="Password">
+      <font>
+         <Font size="16.0" />
+      </font></PasswordField>
     <HBox layoutX="570.0" prefHeight="40.0" prefWidth="97.0">
         <Button fx:id="minimizeField" alignment="TOP_RIGHT" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#minimizeWindow" prefHeight="4.0" prefWidth="20.0" style="-fx-background-color: transparent;" text="-">
             <HBox.margin>
@@ -59,7 +62,7 @@
             <Font size="16.0" />
         </font>
     </TextField>
-    <TextField fx:id="secondNameField" layoutX="469.0" layoutY="220.0" prefHeight="30.0" prefWidth="149.0" promptText="Second name">
+    <TextField fx:id="secondNameField" layoutX="470.0" layoutY="218.0" prefHeight="40.0" prefWidth="149.0" promptText="Second name">
         <font>
             <Font size="16.0" />
         </font>
