@@ -9,7 +9,7 @@ import services.UserService;
 
 public class Main extends Application {
 
-    private double xoffset, yoffset;
+    private double xoffset, yoffset = 0;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
