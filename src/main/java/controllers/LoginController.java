@@ -41,6 +41,7 @@ public class LoginController {
 
     @FXML
     public void handleLoginAction(javafx.event.ActionEvent event) {
+
         String username = usernameField.getText();
         String password = passwordField.getText();
 
@@ -58,6 +59,14 @@ public class LoginController {
 
             Parent viewUserLogin = Loader.load();
             Scene loginScene = new Scene(viewUserLogin, 670, 500);
+
+            } else if (aux == 2) {
+                Loader.setLocation(getClass().getClassLoader().getResource("Dentist.fxml"));
+            }
+
+            Parent viewUserLogin = Loader.load();
+            Scene loginScene = new Scene(viewUserLogin, 655, 500);
+
             Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
             window.setScene(loginScene);
             window.show();
