@@ -5,6 +5,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import services.DentistService;
 import services.UserService;
 
 public class Main extends Application {
@@ -14,6 +15,8 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         UserService.initDatabase();
+        DentistService.initDatabase();
+
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("user_login.fxml"));
         primaryStage.getIcons().add(new Image("images/ToothPicture.png"));
         primaryStage.setTitle("Dentist reservation");
