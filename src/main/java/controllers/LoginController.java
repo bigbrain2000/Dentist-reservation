@@ -14,6 +14,8 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.jetbrains.annotations.NotNull;
 import services.UserService;
+
+import java.awt.*;
 import java.io.IOException;
 
 public class LoginController {
@@ -39,11 +41,21 @@ public class LoginController {
     @FXML
     private Text registrationMessage;
 
+    private static String username;
+    private static String password;
+
+    public static String getUsername() {
+        return username;
+    }
+
+    public static String getPassword() {
+        return password;
+    }
+
     @FXML
     public void handleLoginAction(javafx.event.ActionEvent event) {
-
-        String username = usernameField.getText();
-        String password = passwordField.getText();
+        username = usernameField.getText();
+        password = passwordField.getText();
 
         try {
             int aux = UserService.loginUser(username, password);
@@ -52,7 +64,7 @@ public class LoginController {
                 Loader.setLocation(getClass().getClassLoader().getResource("Patient.fxml"));
                 clearFields();
             } else if (aux == 2) {
-                Loader.setLocation(getClass().getClassLoader().getResource("dentist_Page.fxml"));
+                Loader.setLocation(getClass().getClassLoader().getResource("dentist_page.fxml"));
                 clearFields();
             }
             Parent viewUserLogin = Loader.load();
@@ -91,7 +103,7 @@ public class LoginController {
     }
 
     @FXML
-    public void goBackToLogin(@NotNull javafx.event.ActionEvent event) throws IOException {
+    public void goBackToRegistration(@NotNull javafx.event.ActionEvent event) throws IOException {
         FXMLLoader Loader = new FXMLLoader();
         Loader.setLocation(getClass().getClassLoader().getResource("user_registration.fxml"));
         Parent viewUserLogin = Loader.load();

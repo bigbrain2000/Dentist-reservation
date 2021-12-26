@@ -128,7 +128,7 @@ public class UserService {
         return null;
     }
 
-    static String encodePassword(String salt, String password) {
+    public static String encodePassword(String salt, String password) {
         MessageDigest md = getMessageDigest();
         md.update(salt.getBytes(StandardCharsets.UTF_8));
 
@@ -148,6 +148,7 @@ public class UserService {
         }
         return md;
     }
+
     public static ObjectRepository<User>  getUsers() {
         return userRepository;
     }
