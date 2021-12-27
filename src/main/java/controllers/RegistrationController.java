@@ -66,11 +66,13 @@ public class RegistrationController {
             ClearAllFields();
 
         } catch (UsernameAlreadyExistsException e) {
-            getRegistrationMessageForUsernameAlreadyExistsException(e);
+            registrationMessage.setText(e.getMessage());
+            usernameField.clear();
         }catch (FieldNotCompletedException e) {
-            getRegistrationMessageForFieldNotCompletedException(e);
+            registrationMessage.setText(e.getMessage());
         }catch (WeakPasswordException e) {
-            getRegistrationMessageForWeakPasswordException(e);
+            registrationMessage.setText(e.getMessage());
+            passwordField.clear();
         }
     }
 
@@ -87,20 +89,6 @@ public class RegistrationController {
         secondNameField.clear();
         phoneNumberField.clear();
         addressField.clear();
-    }
-
-    private void getRegistrationMessageForUsernameAlreadyExistsException(@NotNull UsernameAlreadyExistsException e) {
-        registrationMessage.setText(e.getMessage());
-        passwordField.clear();
-    }
-
-    private void getRegistrationMessageForWeakPasswordException(@NotNull WeakPasswordException e) {
-        registrationMessage.setText(e.getMessage());
-        passwordField.clear();
-    }
-
-    private void getRegistrationMessageForFieldNotCompletedException(@NotNull FieldNotCompletedException e) {
-        registrationMessage.setText(e.getMessage());
     }
 
     public void goBackToLogin(javafx.event.ActionEvent back) throws IOException {

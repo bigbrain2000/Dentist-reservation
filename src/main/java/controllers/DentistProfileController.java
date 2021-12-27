@@ -18,13 +18,10 @@ import java.io.IOException;
 import java.util.Objects;
 
 
-public class DentistProfileController {
+public class DentistProfileController extends DentistPageAbstract{
 
     @FXML
     private TextField usernameField;
-
-    @FXML
-    private TextField passwordField;
 
     @FXML
     private TextField firstNameField;
@@ -52,19 +49,17 @@ public class DentistProfileController {
 
     //user data from authentication
     private  String username = LoginController.getUsername();
-    private String password = LoginController.getPassword();
 
     public void initialize() {
         for (User user : UserService.getUsers().find())
             if (Objects.equals(username, user.getUsername())){
-                    setTextFields(user);
-                    setTextFieldsNotEditable();
+                setTextFields(user);
+                setTextFieldsNotEditable();
             }
     }
 
     private void setTextFieldsNotEditable() {
         usernameField.setEditable(false);
-        passwordField.setEditable(false);
         firstNameField.setEditable(false);
         secondNameField.setEditable(false);
         adressField.setEditable(false);
@@ -74,7 +69,6 @@ public class DentistProfileController {
 
     private void setTextFields(User user) {
         usernameField.setText(user.getUsername());
-        passwordField.setText(password);
         firstNameField.setText(user.getFirstName());
         secondNameField.setText(user.getSecondName());
         adressField.setText(user.getAddress());
@@ -82,22 +76,11 @@ public class DentistProfileController {
         roleField.setText(user.getRole());
     }
 
-    @FXML
-    public void goBackToDentistPage(@NotNull javafx.event.ActionEvent event) throws IOException {
-        FXMLLoader Loader = new FXMLLoader();
-        Loader.setLocation(getClass().getClassLoader().getResource("dentist_page.fxml"));
-        Parent viewUserLogin = Loader.load();
-        Scene loginScene = new Scene(viewUserLogin, 650, 480);
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(loginScene);
-        window.show();
-    }
-
     public void loadRegisterFXML(@NotNull javafx.event.ActionEvent event) throws IOException {
         FXMLLoader Loader = new FXMLLoader();
         Loader.setLocation(getClass().getClassLoader().getResource("user_registration.fxml"));
         Parent viewUserLogin = Loader.load();
-        Scene loginScene = new Scene(viewUserLogin, 655, 500);
+        Scene loginScene = new Scene(viewUserLogin, 650, 500);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(loginScene);
         window.show();
