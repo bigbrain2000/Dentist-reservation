@@ -5,7 +5,6 @@ import model.User;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.jetbrains.annotations.Nullable;
-
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
@@ -29,8 +28,8 @@ public class UserService {
 
     public static void addUser(String username, String password, String firstName,
                                String secondName, String phoneNumber, String address, String role) throws UsernameAlreadyExistsException, FieldNotCompletedException, WeakPasswordException {
-        checkUserAlreadyExist(username);
         checkAllFieldsAreCompleted(username, password, firstName, secondName,phoneNumber, role);
+        checkUserAlreadyExist(username);
         checkPasswordFormatException(password);
         userRepository.insert(new User(username, encodePassword(username, password), firstName, secondName, phoneNumber, address, role));
     }

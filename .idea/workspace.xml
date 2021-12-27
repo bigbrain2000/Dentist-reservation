@@ -6,10 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="d9056ea2-ad44-487d-a219-7b91f9d85aff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DentistPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/DentistPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DentistProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/DentistProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/RegistrationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/user_registration.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/user_registration.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dentist_page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dentist_page.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dentist_profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dentist_profile.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,8 +22,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Class" />
         <option value="FxmlFile" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -39,7 +42,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="C:/Desktop/primele/Aplicatie-de-rezervare-locuri-de-parcare" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -55,6 +58,7 @@
       <recent name="D:\Dentist-reservation\src\main\resources\Images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Dentist-reservation\src\main\resources\images" />
       <recent name="D:\Dentist-reservation" />
     </key>
   </component>
@@ -83,10 +87,24 @@
       <updated>1640450766339</updated>
       <workItem from="1640450768577" duration="2517000" />
       <workItem from="1640453387379" duration="3544000" />
+      <workItem from="1640606554819" duration="5723000" />
+      <workItem from="1640612440377" duration="5364000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

@@ -14,8 +14,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.jetbrains.annotations.NotNull;
 import services.UserService;
-
-import java.awt.*;
 import java.io.IOException;
 
 public class LoginController {
@@ -48,10 +46,6 @@ public class LoginController {
         return username;
     }
 
-    public static String getPassword() {
-        return password;
-    }
-
     @FXML
     public void handleLoginAction(javafx.event.ActionEvent event) {
         username = usernameField.getText();
@@ -73,12 +67,11 @@ public class LoginController {
             window.setScene(loginScene);
             window.show();
 
-        } catch (FieldNotCompletedException e) {
-            getRegistrationMessageForFieldNotCompletedException(e);
-        } catch (UsernameDoesNotExistsException e) {
-            getRegistrationMessageForUsernameDoesNotExistsException(e);
+        } catch (FieldNotCompletedException | UsernameDoesNotExistsException e) {
+            registrationMessage.setText(e.getMessage());
         } catch (WrongPasswordException e) {
-            getRegistrationMessageForWrongPasswordException(e);
+            registrationMessage.setText(e.getMessage());
+            passwordField.clear();
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -87,19 +80,6 @@ public class LoginController {
     public void clearFields(){
         usernameField.clear();
         passwordField.clear();
-    }
-
-    private void getRegistrationMessageForWrongPasswordException(@NotNull WrongPasswordException e) {
-        registrationMessage.setText(e.getMessage());
-        passwordField.clear();
-    }
-
-    private void getRegistrationMessageForFieldNotCompletedException(@NotNull FieldNotCompletedException e) {
-        registrationMessage.setText(e.getMessage());
-    }
-
-    private void getRegistrationMessageForUsernameDoesNotExistsException(@NotNull UsernameDoesNotExistsException e) {
-        registrationMessage.setText(e.getMessage());
     }
 
     @FXML

@@ -7,19 +7,11 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.control.TextField;
 import javafx.stage.Stage;
-import model.Dentist;
 import org.jetbrains.annotations.NotNull;
-import services.DentistService;
-
 import java.io.IOException;
-import java.util.Objects;
 
 public class DentistPageController {
-
-    @FXML
-    private TextField usernameField;
 
     @FXML
     private Button addDentists;
@@ -59,7 +51,18 @@ public class DentistPageController {
         FXMLLoader Loader = new FXMLLoader();
         Loader.setLocation(getClass().getClassLoader().getResource("dentist_profile.fxml"));
         Parent viewUserLogin = Loader.load();
-        Scene loginScene = new Scene(viewUserLogin, 600, 400);
+        Scene loginScene = new Scene(viewUserLogin, 600, 420);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(loginScene);
+        window.show();
+    }
+
+    @FXML
+    public void handleAddDentists(@NotNull javafx.event.ActionEvent event) throws IOException {
+        FXMLLoader Loader = new FXMLLoader();
+        Loader.setLocation(getClass().getClassLoader().getResource("dentist_adding.fxml"));
+        Parent viewUserLogin = Loader.load();
+        Scene loginScene = new Scene(viewUserLogin, 600, 500);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(loginScene);
         window.show();
