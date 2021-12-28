@@ -2,6 +2,7 @@ package services;
 
 import exceptions.DentistServiceNameAlreadyExistsException;
 import exceptions.FieldNotCompletedException;
+import model.Service;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
 import java.util.Objects;
@@ -9,7 +10,7 @@ import static services.FileSystemService.getPathToFile;
 
 public class DentistService {
 
-    private static ObjectRepository<model.DentistService> dentistRepository;
+    private static ObjectRepository<Service> dentistRepository;
     private static Nitrite database;
 
     public static void initDatabase() {
@@ -18,13 +19,13 @@ public class DentistService {
                 .filePath(getPathToFile("dentist_services_database.db").toFile())
                 .openOrCreate("test2", "test2");
 
-        dentistRepository = database.getRepository(model.DentistService.class);
+        dentistRepository = database.getRepository(Service.class);
     }
 
     public static void addDentistService(String name, float price) throws FieldNotCompletedException, DentistServiceNameAlreadyExistsException {
         checkDentistServiceNameAlreadyExist(name);
         checkAllFieldsAreCompleted(name, price);
-        dentistRepository.insert(new model.DentistService(name, price));
+        dentistRepository.insert(new Service(name, price));
     }
 
 
@@ -34,7 +35,7 @@ public class DentistService {
     }
 
     public static void checkDentistServiceNameAlreadyExist(String name) throws DentistServiceNameAlreadyExistsException {
-        for (model.DentistService dentistService : dentistRepository.find()) {
+        for (Service dentistService : dentistRepository.find()) {
             if (Objects.equals(name, dentistService.getName()))
                 throw new DentistServiceNameAlreadyExistsException(name);
         }
@@ -50,7 +51,7 @@ public class DentistService {
         }
     }
 
-    public static ObjectRepository<model.DentistService> getDentistRepository() {
+    public static ObjectRepository<Service> getDentistRepository() {
         return dentistRepository;
     }
 

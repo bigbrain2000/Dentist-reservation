@@ -16,7 +16,7 @@
     <BorderPane prefHeight="200.0" prefWidth="200.0">
         <top>
             <Pane prefHeight="61.0" prefWidth="600.0" style="-fx-background-color: #C0C0C0;" BorderPane.alignment="CENTER">
-                <Label layoutX="38.0" layoutY="16.0" prefHeight="33.0" prefWidth="377.0" text="Enter the information for the new Dentist">
+                <Label layoutX="27.0" layoutY="14.0" prefHeight="33.0" prefWidth="377.0" text="Enter the information for the new Dentist">
                     <font>
                         <Font name="System Bold" size="18.0" />
                     </font>
@@ -25,13 +25,13 @@
         </top>
         <left>
             <Pane prefHeight="431.0" prefWidth="184.0" BorderPane.alignment="CENTER">
-                <TextField fx:id="usernameField" layoutX="26.0" layoutY="53.0" />
-                <Label layoutX="62.0" layoutY="26.0" prefHeight="27.0" prefWidth="77.0" text="Username">
+                <TextField fx:id="usernameField" layoutX="20.0" layoutY="52.0" />
+                <Label layoutX="56.0" layoutY="25.0" prefHeight="27.0" prefWidth="77.0" text="Username">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <Label layoutX="69.0" layoutY="97.0" prefHeight="27.0" prefWidth="77.0" text="Password">
+                <Label layoutX="63.0" layoutY="96.0" prefHeight="27.0" prefWidth="77.0" text="Password">
                     <font>
                         <Font size="16.0" />
                     </font>
@@ -41,41 +41,41 @@
                         <Font size="14.0" />
                     </font>
                 </Button>
-            <PasswordField fx:id="passwordField" layoutX="26.0" layoutY="124.0" />
+            <PasswordField fx:id="passwordField" layoutX="20.0" layoutY="123.0" />
             </Pane>
         </left>
         <center>
             <Pane prefHeight="339.0" prefWidth="406.0" style="-fx-background-color: #87CEFA;" BorderPane.alignment="CENTER">
-                <Label layoutX="36.0" layoutY="70.0" prefHeight="25.0" prefWidth="84.0" text="First name">
+                <Label layoutX="52.0" layoutY="69.0" prefHeight="25.0" prefWidth="84.0" text="First name">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <TextField fx:id="firstNameField" layoutX="4.0" layoutY="95.0" />
-                <Label layoutX="32.0" layoutY="139.0" prefHeight="25.0" prefWidth="102.0" text="Second name">
+                <TextField fx:id="firstNameField" layoutX="20.0" layoutY="94.0" />
+                <Label layoutX="48.0" layoutY="138.0" prefHeight="25.0" prefWidth="102.0" text="Second name">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <TextField fx:id="secondNameField" layoutX="4.0" layoutY="164.0" />
-                <Label layoutX="209.0" layoutY="70.0" prefHeight="25.0" prefWidth="116.0" text="Phone number">
+                <TextField fx:id="secondNameField" layoutX="20.0" layoutY="163.0" />
+                <Label layoutX="225.0" layoutY="69.0" prefHeight="25.0" prefWidth="116.0" text="Phone number">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <TextField fx:id="phoneNumberField" layoutX="184.0" layoutY="95.0" />
+                <TextField fx:id="phoneNumberField" layoutX="200.0" layoutY="94.0" />
                 <Label layoutX="232.0" layoutY="212.0" prefHeight="25.0" prefWidth="65.0" text="Address">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Label>
                 <TextField fx:id="addressField" layoutX="134.0" layoutY="237.0" prefHeight="25.0" prefWidth="248.0" />
-                <Label layoutX="244.0" layoutY="139.0" prefHeight="25.0" prefWidth="45.0" text="Role">
+                <Label layoutX="260.0" layoutY="138.0" prefHeight="25.0" prefWidth="45.0" text="Role">
                     <font>
                         <Font size="16.0" />
                     </font>
                 </Label>
-                <TextField fx:id="roleField" layoutX="184.0" layoutY="164.0" />
+                <TextField fx:id="roleField" layoutX="200.0" layoutY="163.0" />
                 <Button fx:id="createAccountButton" layoutX="232.0" layoutY="382.0" mnemonicParsing="false" onAction="#createNewDentist" prefHeight="35.0" prefWidth="151.0" text="CREATE ACCOUNT" textFill="RED">
                     <font>
                         <Font name="System Bold" size="14.0" />

@@ -52,7 +52,7 @@
             </font>
         </Button>
     </HBox>
-    <TextField fx:id="addressField" layoutX="251.0" layoutY="161.0" prefHeight="30.0" prefWidth="367.0" promptText="Adress">
+    <TextField fx:id="addressField" layoutX="251.0" layoutY="161.0" prefHeight="30.0" prefWidth="367.0" promptText="Address">
         <font>
             <Font size="16.0" />
         </font>

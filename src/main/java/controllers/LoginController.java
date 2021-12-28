@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 import services.UserService;
 import java.io.IOException;
 
-public class LoginController implements PageOptionsInterface, FieldsOptionsInterface {
+public class LoginController {
 
     @FXML
     private Button minimizeField;

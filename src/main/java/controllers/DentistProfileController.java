@@ -33,7 +33,7 @@ public class DentistProfileController extends DentistPageAbstract{
     private TextField phoneNumberField;
 
     @FXML
-    private TextField adressField;
+    private TextField addressField;
 
     @FXML
     private TextField roleField;
@@ -62,16 +62,16 @@ public class DentistProfileController extends DentistPageAbstract{
         usernameField.setEditable(false);
         firstNameField.setEditable(false);
         secondNameField.setEditable(false);
-        adressField.setEditable(false);
+        addressField.setEditable(false);
         phoneNumberField.setEditable(false);
         roleField.setEditable(false);
     }
 
-    private void setTextFields(User user) {
+    private void setTextFields(@NotNull User user) {
         usernameField.setText(user.getUsername());
         firstNameField.setText(user.getFirstName());
         secondNameField.setText(user.getSecondName());
-        adressField.setText(user.getAddress());
+        addressField.setText(user.getAddress());
         phoneNumberField.setText(user.getPhoneNumber());
         roleField.setText(user.getRole());
     }

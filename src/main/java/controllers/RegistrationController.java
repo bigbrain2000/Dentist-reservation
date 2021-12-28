@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import services.UserService;
 import java.io.IOException;
 
-public class RegistrationController implements LoginPageInterface, PageOptionsInterface, FieldsOptionsInterface{
+public class RegistrationController {
     @FXML
     private TextField usernameField;
 
@@ -59,7 +59,7 @@ public class RegistrationController implements LoginPageInterface, PageOptionsIn
     }
 
     @FXML
-    public void handleRegisterAction()  {
+    private void handleRegisterAction()  {
         try {
             insertUserDataIntoDB();
             registrationMessage.setText("Account created successfully!");
@@ -92,12 +92,12 @@ public class RegistrationController implements LoginPageInterface, PageOptionsIn
     }
 
     @FXML
-    public void goBackToLogin(javafx.event.ActionEvent back) throws IOException {
-        loadLoginFXML(back);
+    private void goBackToLogin(javafx.event.ActionEvent back) throws IOException {
+        handleLoginAction(back);
     }
 
     @FXML
-    public void loadLoginFXML(@NotNull javafx.event.ActionEvent event) throws IOException {
+    private void handleLoginAction(@NotNull javafx.event.ActionEvent event) throws IOException {
         FXMLLoader Loader = new FXMLLoader();
         Loader.setLocation(getClass().getClassLoader().getResource("user_login.fxml"));
         Parent viewUserLogin = Loader.load();
@@ -108,13 +108,13 @@ public class RegistrationController implements LoginPageInterface, PageOptionsIn
     }
 
     @FXML
-    public void minimizeWindow(@NotNull javafx.event.ActionEvent min) {
+    private void minimizeWindow(@NotNull javafx.event.ActionEvent min) {
         Stage window = (Stage) ((Node) min.getSource()).getScene().getWindow();
         window.setIconified(true);
     }
 
     @FXML
-    public void closeWindow(@NotNull javafx.event.ActionEvent close) {
+    private void closeWindow(@NotNull javafx.event.ActionEvent close) {
         Stage window = (Stage) ((Node) close.getSource()).getScene().getWindow();
         window.close();
     }

@@ -69,10 +69,26 @@
             <Insets left="25.0" />
          </VBox.margin>
       </Button>
-      <Button fx:id="addAppointmentsButton" layoutX="10.0" layoutY="108.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" text="Add appointments">
+      <Button fx:id="viewServicesButton" layoutX="35.0" layoutY="255.0" mnemonicParsing="false" onAction="#handleViewServicesAction" prefHeight="50.0" prefWidth="192.0" text="View services">
          <graphic>
-            <ImageView fitHeight="35.0" fitWidth="34.0" pickOnBounds="true" preserveRatio="true">
-               <Image url="@images/AddDentistsLogo.png" />
+            <ImageView fitHeight="30.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@images/AppointmentsSearchLogo.png" />
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="14.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="25.0" />
+         </VBox.margin>
+         <padding>
+            <Insets left="-40.0" />
+         </padding>
+      </Button>
+      <Button fx:id="viewAppointmentsButton" layoutX="10.0" layoutY="108.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" text="View appointments">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@images/AppointmentsSearchLogo.png" />
             </ImageView>
          </graphic>
          <font>
@@ -82,7 +98,7 @@
             <Insets left="25.0" />
          </VBox.margin>
       </Button>
-      <Button fx:id="logoutButton" layoutX="10.0" layoutY="108.0" mnemonicParsing="false" onAction="#handleLogoutAction" prefHeight="50.0" prefWidth="192.0" text="Log out">
+      <Button fx:id="logoutButton" layoutX="10.0" layoutY="108.0" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="50.0" prefWidth="192.0" text="Log out">
          <graphic>
             <ImageView fitHeight="39.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
                <Image url="@images/LogoutLogo.jpg" />
@@ -120,7 +136,7 @@
          </font>
       </Button>
    </HBox>
-   <TextArea layoutX="273.0" layoutY="83.0" prefHeight="390.0" prefWidth="356.0" text="About us&#10;&#10;&#9;Positioned on a downtown street on Timișoara, Dr. Roncea Dental Clinic&#10;makes complex dental services for customers from all over the world. &#10;This is where the patients benefits from integrated medical services, with modern equipment,&#10;which reduces waiting time and improves considerablythe quality of their medical procedures.&#10;&#9;Our clinic motto is &quot;Smile and sparkle with whiter healthy teeth&quot;.&#10;Dentists help patients achieve a flawless smile through perfectly aligned teeth.&#10;&#9;Doctor-patient communication is extremely important to us because we want to please every patient.&#10;&#9;The dentists of the Dr. Roncea Dental Clinic in Timișoara want to know aspects about each patient, &#10;so before making a reservation clients must complete a medical file. &#10;This medical file helps dentists to understand  better the cause of each patient's problem and to act quickly.&#10;&#9;There is always a reason to smile with healthy teeth. Find it!&#10;">
+   <TextArea layoutX="273.0" layoutY="96.0" prefHeight="377.0" prefWidth="356.0" text="About us&#10;&#10;&#9;Positioned on a downtown street on Timișoara, Dr. Roncea Dental Clinic&#10;makes complex dental services for customers from all over the world. &#10;This is where the patients benefits from integrated medical services, with modern equipment,&#10;which reduces waiting time and improves considerable the quality of their medical procedures.&#10;&#9;Our clinic motto is &quot;Smile and sparkle with whiter healthy teeth&quot;.&#10;Dentists help patients achieve a flawless smile through perfectly aligned teeth.&#10;&#9;Doctor-patient communication is extremely important to us because we want to please every patient.&#10;&#9;The dentists of the Dr. Roncea Dental Clinic in Timișoara want to know aspects about each patient, &#10;so before making a reservation clients must complete a medical file. &#10;This medical file helps dentists to understand  better the cause of each patient's problem and to act quickly.&#10;&#9;There is always a reason to smile with healthy teeth. Find it!&#10;">
       <font>
          <Font size="16.0" />
       </font></TextArea>
