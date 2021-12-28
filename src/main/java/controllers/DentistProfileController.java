@@ -76,7 +76,7 @@ public class DentistProfileController extends DentistPageAbstract{
         roleField.setText(user.getRole());
     }
 
-    public void loadRegisterFXML(@NotNull javafx.event.ActionEvent event) throws IOException {
+    private void loadRegisterFXML(@NotNull javafx.event.ActionEvent event) throws IOException {
         FXMLLoader Loader = new FXMLLoader();
         Loader.setLocation(getClass().getClassLoader().getResource("user_registration.fxml"));
         Parent viewUserLogin = Loader.load();
@@ -86,7 +86,8 @@ public class DentistProfileController extends DentistPageAbstract{
         window.show();
     }
 
-    public void deleteAccount(javafx.event.ActionEvent event) throws IOException {
+    @FXML
+    private void deleteAccount(javafx.event.ActionEvent event) throws IOException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Delete account");
         alert.setHeaderText("Are you sure you want to delete this account? ");

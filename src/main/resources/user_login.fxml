@@ -39,7 +39,7 @@
     <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="101.0" layoutY="132.0" pickOnBounds="true" preserveRatio="true">
         <Image url="@images/SuperToothImage.png" />
     </ImageView>
-    <Label layoutX="161.0" layoutY="53.0" prefHeight="27.0" prefWidth="377.0" text="Smile and sparkle with whiter healty teeth">
+    <Label layoutX="161.0" layoutY="53.0" prefHeight="27.0" prefWidth="377.0" text="Smile and sparkle with whiter healthy teeth">
         <font>
             <Font name="System Bold" size="18.0" />
         </font>
@@ -65,7 +65,7 @@
           <Font size="20.0" />
         </font>
     </Button>
-    <Label layoutX="33.0" layoutY="436.0" prefHeight="25.0" prefWidth="347.0" style="-fx-background-color: #C0C0C0;" text="Note: if you don`t have an account. click the Register button">
+    <Label layoutX="33.0" layoutY="436.0" prefHeight="25.0" prefWidth="347.0" style="-fx-background-color: #C0C0C0;" text="Note: if you don`t have an account, click the Register button">
         <font>
           <Font name="System Bold Italic" size="12.0" />
         </font>
