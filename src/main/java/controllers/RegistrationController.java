@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import services.UserService;
 import java.io.IOException;
 
-public class RegistrationController {
+public class RegistrationController implements LoginPageInterface, PageOptionsInterface{
     @FXML
     private TextField usernameField;
 
@@ -91,15 +91,17 @@ public class RegistrationController {
         addressField.clear();
     }
 
+    @FXML
     public void goBackToLogin(javafx.event.ActionEvent back) throws IOException {
-        LoadFXML(back);
+        LoadLoginFXML(back);
     }
 
-    private void LoadFXML(@NotNull javafx.event.ActionEvent event) throws IOException {
+    @FXML
+    public void LoadLoginFXML(@NotNull javafx.event.ActionEvent event) throws IOException {
         FXMLLoader Loader = new FXMLLoader();
         Loader.setLocation(getClass().getClassLoader().getResource("user_login.fxml"));
         Parent viewUserLogin = Loader.load();
-        Scene loginScene = new Scene(viewUserLogin, 655, 500);
+        Scene loginScene = new Scene(viewUserLogin, 656, 500);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(loginScene);
         window.show();

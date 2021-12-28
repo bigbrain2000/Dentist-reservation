@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 import org.jetbrains.annotations.NotNull;
 import java.io.IOException;
 
-public class DentistPageController {
+public class DentistPageController implements LoginPageInterface, PageOptionsInterface{
 
     @FXML
     private Button addDentists;
@@ -35,19 +35,19 @@ public class DentistPageController {
     private Button closeField;
 
     @FXML
-    public void minimizeWindow(@NotNull ActionEvent event) {
+    private void minimizeWindow(@NotNull ActionEvent event) {
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setIconified(true);
     }
 
     @FXML
-    public void closeWindow(@NotNull ActionEvent event) {
+    private void closeWindow(@NotNull ActionEvent event) {
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.close();
     }
 
     @FXML
-    public void handleViewProfileAction(@NotNull javafx.event.ActionEvent event) throws IOException {
+    private void handleViewProfileAction(@NotNull javafx.event.ActionEvent event) throws IOException {
         FXMLLoader Loader = new FXMLLoader();
         Loader.setLocation(getClass().getClassLoader().getResource("dentist_profile.fxml"));
         Parent viewUserLogin = Loader.load();
@@ -58,7 +58,7 @@ public class DentistPageController {
     }
 
     @FXML
-    public void handleAddDentists(@NotNull javafx.event.ActionEvent event) throws IOException {
+    private void handleAddDentists(@NotNull javafx.event.ActionEvent event) throws IOException {
         FXMLLoader Loader = new FXMLLoader();
         Loader.setLocation(getClass().getClassLoader().getResource("dentist_adding.fxml"));
         Parent viewUserLogin = Loader.load();
@@ -67,4 +67,16 @@ public class DentistPageController {
         window.setScene(loginScene);
         window.show();
     }
+
+    @FXML
+    private void LoadLoginFXML(@NotNull javafx.event.ActionEvent event) throws IOException {
+        FXMLLoader Loader = new FXMLLoader();
+        Loader.setLocation(getClass().getClassLoader().getResource("user_login.fxml"));
+        Parent viewUserLogin = Loader.load();
+        Scene loginScene = new Scene(viewUserLogin, 655, 500);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(loginScene);
+        window.show();
+    }
+
 }

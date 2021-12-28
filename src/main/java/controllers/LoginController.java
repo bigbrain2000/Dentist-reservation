@@ -16,7 +16,7 @@ import org.jetbrains.annotations.NotNull;
 import services.UserService;
 import java.io.IOException;
 
-public class LoginController {
+public class LoginController implements PageOptionsInterface {
 
     @FXML
     private Button minimizeField;
@@ -47,7 +47,7 @@ public class LoginController {
     }
 
     @FXML
-    public void handleLoginAction(javafx.event.ActionEvent event) {
+    private void handleLoginAction(javafx.event.ActionEvent event) {
         username = usernameField.getText();
         password = passwordField.getText();
 
@@ -77,13 +77,13 @@ public class LoginController {
         }
     }
 
-    public void clearFields(){
+    private void clearFields(){
         usernameField.clear();
         passwordField.clear();
     }
 
     @FXML
-    public void goBackToRegistration(@NotNull javafx.event.ActionEvent event) throws IOException {
+    private void goBackToRegistration(@NotNull javafx.event.ActionEvent event) throws IOException {
         FXMLLoader Loader = new FXMLLoader();
         Loader.setLocation(getClass().getClassLoader().getResource("user_registration.fxml"));
         Parent viewUserLogin = Loader.load();
@@ -94,13 +94,13 @@ public class LoginController {
     }
 
     @FXML
-    public void minimizeWindow(@NotNull ActionEvent event) {
+    private void minimizeWindow(@NotNull ActionEvent event) {
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setIconified(true);
     }
 
     @FXML
-    public void closeWindow(@NotNull ActionEvent event) {
+    private void closeWindow(@NotNull ActionEvent event) {
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.close();
     }
