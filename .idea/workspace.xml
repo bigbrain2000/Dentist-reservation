@@ -6,9 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="d9056ea2-ad44-487d-a219-7b91f9d85aff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DentistAddingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/DentistAddingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DentistPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/DentistPageController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/WeakPasswordException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/WeakPasswordException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/DentistService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/DentistService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/dentist_page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dentist_page.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +23,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -40,7 +43,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="C:/Desktop/primele/Aplicatie-de-rezervare-locuri-de-parcare" />
+    <property name="last_opened_file_path" value="C:/Desktop/primele/CarLounge-CarRental_App" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -56,6 +59,7 @@
       <recent name="D:\Dentist-reservation\src\main\resources\Images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Dentist-reservation\src\main\resources" />
       <recent name="D:\Dentist-reservation\src\main\resources\images" />
       <recent name="D:\Dentist-reservation" />
     </key>
@@ -88,6 +92,8 @@
       <workItem from="1640606554819" duration="5723000" />
       <workItem from="1640612440377" duration="9740000" />
       <workItem from="1640678364188" duration="3394000" />
+      <workItem from="1640682200749" duration="725000" />
+      <workItem from="1640688411247" duration="9667000" />
     </task>
     <servers />
   </component>

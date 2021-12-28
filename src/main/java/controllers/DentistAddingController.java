@@ -14,7 +14,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import services.UserService;
 
-public class DentistAddingController extends DentistPageAbstract{
+public class DentistAddingController extends DentistPageAbstract implements  FieldsOptionsInterface{
 
     @FXML
     private StackPane stackPane;
@@ -98,7 +98,7 @@ public class DentistAddingController extends DentistPageAbstract{
     public void createNewDentist() {
         try {
             InsertDentistDataIntoDB();
-            ClearAllFields();
+            clearFields();
             increaseCounter();
             registrationMessage.setText("Account created successfully!");
 
@@ -115,7 +115,7 @@ public class DentistAddingController extends DentistPageAbstract{
         }
     }
 
-    private void ClearAllFields() {
+    private void clearFields() {
         usernameField.clear();
         passwordField.clear();
         firstNameField.clear();
