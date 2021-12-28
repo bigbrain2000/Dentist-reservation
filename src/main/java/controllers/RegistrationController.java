@@ -15,7 +15,7 @@ import org.jetbrains.annotations.NotNull;
 import services.UserService;
 import java.io.IOException;
 
-public class RegistrationController implements LoginPageInterface, PageOptionsInterface{
+public class RegistrationController implements LoginPageInterface, PageOptionsInterface, FieldsOptionsInterface{
     @FXML
     private TextField usernameField;
 
@@ -61,9 +61,9 @@ public class RegistrationController implements LoginPageInterface, PageOptionsIn
     @FXML
     public void handleRegisterAction()  {
         try {
-            InsertUserDataIntoDB();
+            insertUserDataIntoDB();
             registrationMessage.setText("Account created successfully!");
-            ClearAllFields();
+            clearFields();
 
         } catch (UsernameAlreadyExistsException e) {
             registrationMessage.setText(e.getMessage());
@@ -76,13 +76,13 @@ public class RegistrationController implements LoginPageInterface, PageOptionsIn
         }
     }
 
-    private void InsertUserDataIntoDB() throws UsernameAlreadyExistsException, FieldNotCompletedException, WeakPasswordException {
+    private void insertUserDataIntoDB() throws UsernameAlreadyExistsException, FieldNotCompletedException, WeakPasswordException {
         UserService.addUser(usernameField.getText(), passwordField.getText(),
                 firstNameField.getText(), secondNameField.getText(), phoneNumberField.getText(),
                 addressField.getText(), role.getValue());
     }
 
-    private void ClearAllFields() {
+    private void clearFields() {
         usernameField.clear();
         passwordField.clear();
         firstNameField.clear();
@@ -93,11 +93,11 @@ public class RegistrationController implements LoginPageInterface, PageOptionsIn
 
     @FXML
     public void goBackToLogin(javafx.event.ActionEvent back) throws IOException {
-        LoadLoginFXML(back);
+        loadLoginFXML(back);
     }
 
     @FXML
-    public void LoadLoginFXML(@NotNull javafx.event.ActionEvent event) throws IOException {
+    public void loadLoginFXML(@NotNull javafx.event.ActionEvent event) throws IOException {
         FXMLLoader Loader = new FXMLLoader();
         Loader.setLocation(getClass().getClassLoader().getResource("user_login.fxml"));
         Parent viewUserLogin = Loader.load();
