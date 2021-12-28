@@ -14,8 +14,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import services.UserService;
 
-
-public class DentistsAdding extends DentistPageAbstract{
+public class DentistAddingController extends DentistPageAbstract{
 
     @FXML
     private StackPane stackPane;
@@ -79,7 +78,7 @@ public class DentistsAdding extends DentistPageAbstract{
         setTooltip(informationalLogo, tooltip);
     }
 
-    public static void setTooltip(Node node, Tooltip tooltip) {
+    private static void setTooltip(Node node, Tooltip tooltip) {
         Tooltip.install(node, tooltip);
     }
 
