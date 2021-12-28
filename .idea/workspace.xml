@@ -6,12 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="d9056ea2-ad44-487d-a219-7b91f9d85aff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DentistPageAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/DentistPageAbstract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DentistProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/DentistProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DentistsAdding.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/DentistAddingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dentist_adding.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dentist_adding.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DentistPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/DentistPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/RegistrationController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/dentist_page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dentist_page.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/user_login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/user_login.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +21,7 @@
       <list>
         <option value="FxmlFile" />
         <option value="Class" />
+        <option value="Interface" />
       </list>
     </option>
   </component>
@@ -88,7 +87,7 @@
       <workItem from="1640453387379" duration="3544000" />
       <workItem from="1640606554819" duration="5723000" />
       <workItem from="1640612440377" duration="9740000" />
-      <workItem from="1640678364188" duration="1901000" />
+      <workItem from="1640678364188" duration="3394000" />
     </task>
     <servers />
   </component>
