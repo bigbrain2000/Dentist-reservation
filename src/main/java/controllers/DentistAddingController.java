@@ -14,7 +14,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import services.UserService;
 
-public class DentistAddingController extends DentistPageAbstract implements  FieldsOptionsInterface{
+public class DentistAddingController extends DentistPageAbstract {
 
     @FXML
     private StackPane stackPane;
@@ -95,7 +95,7 @@ public class DentistAddingController extends DentistPageAbstract implements  Fie
     }
 
     @FXML
-    public void createNewDentist() {
+    private void createNewDentist() {
         try {
             InsertDentistDataIntoDB();
             clearFields();

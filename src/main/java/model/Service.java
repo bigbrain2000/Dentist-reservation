@@ -4,18 +4,18 @@ import org.dizitart.no2.objects.Id;
 
 import java.util.Objects;
 
-public class DentistService {
+public class Service {
     @Id
     private String name;
 
     private float price;
 
-    public DentistService(String name, float price) {
+    public Service(String name, float price) {
         this.name = name;
         this.price = price;
     }
 
-    public DentistService() {}
+    public Service() {}
 
     public String getName() {
         return name;
@@ -37,7 +37,7 @@ public class DentistService {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        DentistService that = (DentistService) o;
+        Service that = (Service) o;
         return Float.compare(that.price, price) == 0 && Objects.equals(name, that.name);
     }
 

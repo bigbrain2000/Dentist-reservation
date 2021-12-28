@@ -3,14 +3,21 @@ package controllers;
 import exceptions.DentistServiceNameAlreadyExistsException;
 import exceptions.DentistServicePriceException;
 import exceptions.FieldNotCompletedException;
-import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
+import javafx.stage.Stage;
+import org.jetbrains.annotations.NotNull;
 import services.DentistService;
 
-public class DentistAddServiceController extends DentistPageAbstract implements FieldsOptionsInterface{
+import java.io.IOException;
+
+public class DentistAddServiceController extends DentistPageAbstract {
 
     @FXML
     private Button backButton;
@@ -34,7 +41,7 @@ public class DentistAddServiceController extends DentistPageAbstract implements 
     private void createService() {
         try {
             insertDentistServiceDataIntoDBIfCorrectPriceFieldFormat();
-            registrationMessage.setText("Service succesfully added !");
+            registrationMessage.setText("Service successfully added !");
             clearFields();
         } catch (FieldNotCompletedException | DentistServiceNameAlreadyExistsException e) {
             registrationMessage.setText(e.getMessage());
@@ -42,12 +49,6 @@ public class DentistAddServiceController extends DentistPageAbstract implements 
             registrationMessage.setText(e.getMessage());
             priceField.clear();
         }
-    }
-
-    @FXML
-    private void viewServices(ActionEvent event) {
-    //pupa
-        //bboobbaa
     }
 
     private void insertDentistServiceDataIntoDBIfCorrectPriceFieldFormat() throws FieldNotCompletedException, DentistServiceNameAlreadyExistsException, DentistServicePriceException {
@@ -61,4 +62,16 @@ public class DentistAddServiceController extends DentistPageAbstract implements 
         serviceNameField.clear();
         priceField.clear();
     }
+
+    @FXML
+    private void handleViewServicesAction(@NotNull javafx.event.ActionEvent event) throws IOException {
+        FXMLLoader Loader = new FXMLLoader();
+        Loader.setLocation(getClass().getClassLoader().getResource("dentist_view_services.fxml"));
+        Parent viewUserLogin = Loader.load();
+        Scene loginScene = new Scene(viewUserLogin, 635, 500);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(loginScene);
+        window.show();
+    }
+
 }
