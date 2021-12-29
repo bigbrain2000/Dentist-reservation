@@ -98,7 +98,7 @@ public class DentistPageController {
         FXMLLoader Loader = new FXMLLoader();
         Loader.setLocation(getClass().getClassLoader().getResource("dentist_view_services.fxml"));
         Parent viewUserLogin = Loader.load();
-        Scene loginScene = new Scene(viewUserLogin, 630, 500);
+        Scene loginScene = new Scene(viewUserLogin, 630, 537);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(loginScene);
         window.show();

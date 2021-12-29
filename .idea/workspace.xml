@@ -7,20 +7,9 @@
     <list default="true" id="d9056ea2-ad44-487d-a219-7b91f9d85aff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DentistAddServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/DentistAddServiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DentistAddingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/DentistAddingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DentistPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/DentistPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DentistProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/DentistProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/FieldsOptionsInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/LoginPageInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/PageOptionsInterface.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/DentistService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Service.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/DentistService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/DentistService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dentist_add_services.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dentist_add_services.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dentist_adding.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dentist_adding.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dentist_page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dentist_page.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dentist_profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dentist_profile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DentistViewServicesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/DentistViewServicesController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dentist_view_services.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dentist_view_services.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/user_registration.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/user_registration.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -32,8 +21,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="FxmlFile" />
-        <option value="Class" />
         <option value="Interface" />
+        <option value="Class" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -53,6 +43,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -104,7 +95,9 @@
       <workItem from="1640678364188" duration="3394000" />
       <workItem from="1640682200749" duration="725000" />
       <workItem from="1640688411247" duration="11889000" />
-      <workItem from="1640712970225" duration="9038000" />
+      <workItem from="1640712970225" duration="10641000" />
+      <workItem from="1640766995454" duration="9900000" />
+      <workItem from="1640782716538" duration="2645000" />
     </task>
     <servers />
   </component>
