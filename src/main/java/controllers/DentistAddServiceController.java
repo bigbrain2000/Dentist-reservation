@@ -14,7 +14,6 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.jetbrains.annotations.NotNull;
 import services.DentistService;
-
 import java.io.IOException;
 
 public class DentistAddServiceController extends DentistPageAbstract {
@@ -68,7 +67,7 @@ public class DentistAddServiceController extends DentistPageAbstract {
         FXMLLoader Loader = new FXMLLoader();
         Loader.setLocation(getClass().getClassLoader().getResource("dentist_view_services.fxml"));
         Parent viewUserLogin = Loader.load();
-        Scene loginScene = new Scene(viewUserLogin, 635, 500);
+        Scene loginScene = new Scene(viewUserLogin, 635, 537.0);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(loginScene);
         window.show();
