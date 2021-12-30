@@ -18,7 +18,7 @@ import java.io.IOException;
 import java.util.Objects;
 
 
-public class DentistProfileController extends DentistPageAbstract{
+public class UserProfileController extends DentistPageAbstract{
 
     @FXML
     private TextField usernameField;
