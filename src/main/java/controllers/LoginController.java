@@ -55,7 +55,7 @@ public class LoginController {
             int aux = UserService.loginUser(username, password);
             FXMLLoader Loader = new FXMLLoader();
             if (aux == 1) {
-                Loader.setLocation(getClass().getClassLoader().getResource("Patient.fxml"));
+                Loader.setLocation(getClass().getClassLoader().getResource("client_page.fxml"));
                 clearFields();
             } else if (aux == 2) {
                 Loader.setLocation(getClass().getClassLoader().getResource("dentist_page.fxml"));
