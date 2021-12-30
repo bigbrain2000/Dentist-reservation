@@ -6,12 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="d9056ea2-ad44-487d-a219-7b91f9d85aff" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DentistPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/DentistPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DentistProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/UserProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DentistViewServicesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/DentistViewServicesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/Patient.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/client_page.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dentist_profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/user_profile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/ClientPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/ClientPageController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

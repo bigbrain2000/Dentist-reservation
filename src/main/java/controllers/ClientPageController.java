@@ -28,4 +28,5 @@ public class ClientPageController extends PageAbstract{
     @FXML
     private Button closeField;
 
+
 }
