@@ -17,9 +17,7 @@ import services.UserService;
 import java.io.IOException;
 import java.util.Objects;
 
-
-public class UserProfileController extends DentistPageAbstract{
-
+public class ClientProfileController extends ClientPageAbstract{
     @FXML
     private TextField usernameField;
 
@@ -80,7 +78,7 @@ public class UserProfileController extends DentistPageAbstract{
         FXMLLoader Loader = new FXMLLoader();
         Loader.setLocation(getClass().getClassLoader().getResource("user_registration.fxml"));
         Parent viewUserLogin = Loader.load();
-        Scene loginScene = new Scene(viewUserLogin, 650, 500);
+        Scene loginScene = new Scene(viewUserLogin, 651, 500);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(loginScene);
         window.show();
@@ -90,7 +88,7 @@ public class UserProfileController extends DentistPageAbstract{
     private void deleteAccount(javafx.event.ActionEvent event) throws IOException {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Delete account");
-        alert.setHeaderText("Are you sure you want to delete this account? ");
+        alert.setHeaderText("Are you sure you want to delete this account?");
 
         if(alert.showAndWait().get() == ButtonType.OK) {
             deleteUserFromDB(username);

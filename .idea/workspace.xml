@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9056ea2-ad44-487d-a219-7b91f9d85aff" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/ClientPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/ClientPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DentistPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/DentistPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/PageAbstract.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/UserProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/DentistProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/client_page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/client_page.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/user_profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dentist_profile.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,10 +23,10 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="FxmlFile" />
         <option value="Interface" />
         <option value="CSS File" />
         <option value="Class" />
+        <option value="FxmlFile" />
       </list>
     </option>
   </component>
@@ -94,6 +101,9 @@
       <workItem from="1640712970225" duration="10641000" />
       <workItem from="1640766995454" duration="9900000" />
       <workItem from="1640782716538" duration="2645000" />
+      <workItem from="1640885813624" duration="6871000" />
+      <workItem from="1640893234670" duration="62000" />
+      <workItem from="1640932528226" duration="9570000" />
     </task>
     <servers />
   </component>

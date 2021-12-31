@@ -37,7 +37,7 @@
             <Insets left="25.0" />
          </VBox.margin>
       </Button>
-      <Button fx:id="addMedicalRecordButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" text="Add medical record">
+      <Button fx:id="addMedicalRecordButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleAddMedicalRecordAction" prefHeight="50.0" prefWidth="192.0" text="Add medical record">
          <graphic>
             <ImageView fitHeight="33.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
                <Image url="@images/AddServices.png" />
