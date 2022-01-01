@@ -12,9 +12,12 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
+import model.User;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import services.UserService;
 import java.io.IOException;
+import java.util.Objects;
 
 public class LoginController {
 
@@ -41,6 +44,7 @@ public class LoginController {
 
     private static String username;
     private static String password;
+    private static String firstName, secondName;
 
     public static String getUsername() {
         return username;
@@ -75,6 +79,23 @@ public class LoginController {
         } catch (IOException e) {
             e.printStackTrace();
         }
+    }
+
+
+    public static String getUserFirstName() {
+        for (User user : UserService.getUsers().find())
+            if (Objects.equals(username, user.getUsername()))
+                return user.getFirstName();
+
+        return "";
+    }
+
+    public static String getUserSecondName() {
+        for (User user : UserService.getUsers().find())
+            if (Objects.equals(username, user.getUsername()))
+                return user.getSecondName();
+
+        return "";
     }
 
     private void clearFields(){

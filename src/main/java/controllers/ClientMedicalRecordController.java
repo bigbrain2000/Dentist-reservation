@@ -1,7 +1,7 @@
 package controllers;
 
 import exceptions.FieldNotCompletedException;
-import exceptions.MedicalRecordUsernameAlreadyExistException;
+import exceptions.MedicalRecordUsernameAlreadyExistsException;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
@@ -96,12 +96,12 @@ public class ClientMedicalRecordController extends ClientPageAbstract{
             insertMedicalRecordIntoDB();
             clearFields();
             medicalRecordMessage.setText("Medical record successfully added!");
-        } catch (FieldNotCompletedException | MedicalRecordUsernameAlreadyExistException e) {
+        } catch (FieldNotCompletedException | MedicalRecordUsernameAlreadyExistsException e) {
             medicalRecordMessage.setText(e.getMessage());
         }
     }
 
-    private void insertMedicalRecordIntoDB() throws FieldNotCompletedException, MedicalRecordUsernameAlreadyExistException {
+    private void insertMedicalRecordIntoDB() throws FieldNotCompletedException, MedicalRecordUsernameAlreadyExistsException {
         checkIfFieldsAreCompleted();
 
         MedicalRecordService.addMedicalRecord(username, choiceBoxFirstQuestion.getValue(), choiceBoxSecondQuestion.getValue(),
