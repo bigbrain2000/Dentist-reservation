@@ -1,15 +1,10 @@
 package services;
 
-import exceptions.DentistServiceNameAlreadyExistsException;
 import exceptions.FieldNotCompletedException;
-import exceptions.MedicalRecordUsernameAlreadyExistException;
+import exceptions.MedicalRecordUsernameAlreadyExistsException;
 import model.MedicalRecord;
-import model.Service;
-import model.User;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
-import org.jetbrains.annotations.NotNull;
-
 import java.util.Objects;
 
 import static services.FileSystemService.getPathToFile;
@@ -29,15 +24,15 @@ public class MedicalRecordService {
     }
 
     public static void addMedicalRecord(String username, String answerFirstQuestion, String answerSecondQuestion, String answerThirdQuestion,
-                                        String answerFourthQuestion, String vaccinated) throws FieldNotCompletedException, MedicalRecordUsernameAlreadyExistException {
-        checkMedicalRecordUsernameAlreadyExist(username);
+                                        String answerFourthQuestion, String vaccinated) throws FieldNotCompletedException, MedicalRecordUsernameAlreadyExistsException {
+        checkMedicalRecordUsernameAlreadyExists(username);
         medicalRecordRepository.insert(new MedicalRecord(username, answerFirstQuestion, answerSecondQuestion, answerThirdQuestion, answerFourthQuestion, vaccinated));
     }
 
-    public static void checkMedicalRecordUsernameAlreadyExist(String username) throws MedicalRecordUsernameAlreadyExistException {
+    public static void checkMedicalRecordUsernameAlreadyExists(String username) throws MedicalRecordUsernameAlreadyExistsException {
         for (MedicalRecord medicalRecord : medicalRecordRepository.find()) {
             if (Objects.equals(username, medicalRecord.getUsername()))
-                throw new MedicalRecordUsernameAlreadyExistException(username);
+                throw new MedicalRecordUsernameAlreadyExistsException(username);
         }
     }
 
