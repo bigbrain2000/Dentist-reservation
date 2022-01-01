@@ -29,7 +29,7 @@ public class UserService {
     public static void addUser(String username, String password, String firstName,
                                String secondName, String phoneNumber, String address, String role) throws UsernameAlreadyExistsException, FieldNotCompletedException, WeakPasswordException {
         checkAllFieldsAreCompleted(username, password, firstName, secondName,phoneNumber, role);
-        checkUserAlreadyExist(username);
+        checkUserAlreadyExists(username);
         checkPasswordFormatException(password);
         userRepository.insert(new User(username, encodePassword(username, password), firstName, secondName, phoneNumber, address, role));
     }
@@ -42,7 +42,7 @@ public class UserService {
             throw new FieldNotCompletedException();
     }
 
-    public static void checkUserAlreadyExist(String username) throws UsernameAlreadyExistsException {
+    public static void checkUserAlreadyExists(String username) throws UsernameAlreadyExistsException {
         for (User user : userRepository.find()) {
             if (Objects.equals(username, user.getUsername()))
                 throw new UsernameAlreadyExistsException(username);
@@ -79,7 +79,7 @@ public class UserService {
             throw new WeakPasswordException("one upper case");
     }
 
-    public static void checkPassword(String password, String username) throws WrongPasswordException {
+    public static void checkPasswordInOrderToLogin(String password, String username) throws WrongPasswordException {
         boolean flag = false;
         for (User user : userRepository.find())
             if (Objects.equals(username, user.getUsername()))
@@ -104,7 +104,7 @@ public class UserService {
 
     public static int loginUser(String username, String password) throws UsernameDoesNotExistsException, WrongPasswordException, FieldNotCompletedException {
         checkUserDoesAlreadyExist(username);
-        checkPassword(password,username);
+        checkPasswordInOrderToLogin(password,username);
 
         String encryptedPassword = encodePassword(username, password);
 

@@ -71,6 +71,17 @@ public class ClientPageController {
     }
 
     @FXML
+    protected void handleAddAppointmentAction(@NotNull javafx.event.ActionEvent event) throws IOException {
+        FXMLLoader Loader = new FXMLLoader();
+        Loader.setLocation(getClass().getClassLoader().getResource("client_appointment.fxml"));
+        Parent viewUserLogin = Loader.load();
+        Scene loginScene = new Scene(viewUserLogin, 600, 500);
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(loginScene);
+        window.show();
+    }
+
+    @FXML
     protected void minimizeWindow(@NotNull ActionEvent event) {
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setIconified(true);
