@@ -5,6 +5,8 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import org.jetbrains.annotations.NotNull;
+import services.AppointmentService;
 import services.DentistService;
 import services.MedicalRecordService;
 import services.UserService;
@@ -14,10 +16,11 @@ public class Main extends Application {
     private double xoffset, yoffset = 0;
 
     @Override
-    public void start(Stage primaryStage) throws Exception {
+    public void start(@NotNull Stage primaryStage) throws Exception {
         UserService.initDatabase();
         DentistService.initDatabase();
         MedicalRecordService.initDatabase();
+        AppointmentService.initDatabase();
 
         Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("user_login.fxml"));
         primaryStage.getIcons().add(new Image("images/ToothPicture.png"));
