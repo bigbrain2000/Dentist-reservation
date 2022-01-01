@@ -69,7 +69,7 @@
             <Insets left="-40.0" />
          </padding>
       </Button>
-      <Button fx:id="addAppointmentButton" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" text="Add appointment">
+      <Button fx:id="addAppointmentButton" mnemonicParsing="false" onAction="#handleAddAppointmentAction" prefHeight="50.0" prefWidth="192.0" text="Add appointment">
          <graphic>
             <ImageView fitHeight="39.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
                <Image url="@images/AddDentistsLogo.png" />
