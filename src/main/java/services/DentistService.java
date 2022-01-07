@@ -1,10 +1,14 @@
 package services;
 
-import exceptions.DentistServiceNameAlreadyExistsException;
+import exceptions.username.DentistServiceNameAlreadyExistsException;
 import exceptions.FieldNotCompletedException;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.TextField;
 import model.Service;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
+import org.jetbrains.annotations.NotNull;
+import java.util.ArrayList;
 import java.util.Objects;
 import static services.FileSystemService.getPathToFile;
 
@@ -29,7 +33,7 @@ public class DentistService {
     }
 
 
-    public static void checkAllFieldsAreCompleted(String name, float price) throws FieldNotCompletedException {
+    public static void checkAllFieldsAreCompleted(@NotNull String name, float price) throws FieldNotCompletedException {
         if (name.trim().isEmpty() || String.valueOf(price).trim().isEmpty())
             throw new FieldNotCompletedException();
     }
@@ -49,6 +53,23 @@ public class DentistService {
         } catch (NumberFormatException ex) {
             return false;
         }
+    }
+
+    @NotNull
+    public static ArrayList<String> getDentistServiceNameList() {
+        ArrayList<String> dentistServiceList = new ArrayList<>();
+
+        for(Service service : dentistRepository.find()) {
+            dentistServiceList.add(service.getName());
+        }
+
+        return dentistServiceList;
+    }
+
+    public static void getDentistServicePriceBasedOnName(@NotNull ChoiceBox<String> dentistServiceName, @NotNull TextField dentistServicePrice) {
+        for(Service service : dentistRepository.find())
+            if(Objects.equals(service.getName(), dentistServiceName.getValue()))
+                dentistServicePrice.setText(String.valueOf(service.getPrice()));
     }
 
     public static ObjectRepository<Service> getDentistRepository() {

@@ -1,13 +1,19 @@
 package services;
 
 import exceptions.*;
+import exceptions.password.WeakPasswordException;
+import exceptions.password.WrongPasswordException;
+import exceptions.username.UsernameAlreadyExistsException;
+import exceptions.username.UsernameDoesNotExistsException;
 import model.User;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
+import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
 import java.util.Objects;
 import java.util.regex.Pattern;
 import static services.FileSystemService.getPathToFile;
@@ -26,6 +32,12 @@ public class UserService {
         userRepository = database.getRepository(User.class);
     }
 
+    public static void deleteUser(String username) {
+        for (User user : userRepository.find())
+            if (Objects.equals(username, user.getUsername()))
+                userRepository.remove(user);
+    }
+
     public static void addUser(String username, String password, String firstName,
                                String secondName, String phoneNumber, String address, String role) throws UsernameAlreadyExistsException, FieldNotCompletedException, WeakPasswordException {
         checkAllFieldsAreCompleted(username, password, firstName, secondName,phoneNumber, role);
@@ -34,7 +46,7 @@ public class UserService {
         userRepository.insert(new User(username, encodePassword(username, password), firstName, secondName, phoneNumber, address, role));
     }
 
-    public static void checkAllFieldsAreCompleted(String username, String password, String firstName,
+    public static void checkAllFieldsAreCompleted(@NotNull String username, String password, String firstName,
                                                   String secondName, String phoneNumber, String role) throws FieldNotCompletedException {
 
         if (username.trim().isEmpty() || password.trim().isEmpty() || firstName.trim().isEmpty() || secondName.trim().isEmpty()
@@ -64,7 +76,7 @@ public class UserService {
         checkIfPasswordContainsAtLeast1UpperCase(password);
     }
 
-    private static void checkIfPasswordContainsAtLeast8Characters(String password) throws WeakPasswordException {
+    private static void checkIfPasswordContainsAtLeast8Characters(@NotNull String password) throws WeakPasswordException {
         if (password.length() < 8)
             throw new WeakPasswordException("8 characters");
     }
@@ -127,7 +139,19 @@ public class UserService {
         return null;
     }
 
-    public static String encodePassword(String salt, String password) {
+    @NotNull
+    public static ArrayList<String> getDentistsFirstNameList() {
+        ArrayList<String> dentistFirstNameList = new ArrayList<>();
+
+        for(User user : userRepository.find())
+            if (Objects.equals("Dentist", user.getRole()))
+                dentistFirstNameList.add(user.getFirstName());
+
+        return dentistFirstNameList;
+    }
+
+    @NotNull
+    public static String encodePassword(@NotNull String salt, @NotNull String password) {
         MessageDigest md = getMessageDigest();
         md.update(salt.getBytes(StandardCharsets.UTF_8));
 
