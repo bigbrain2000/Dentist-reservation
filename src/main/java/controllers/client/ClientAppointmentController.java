@@ -1,10 +1,10 @@
 package controllers.client;
 
 import controllers.login.LoginController;
-import exceptions.MedicalRecordNotCompletedException;
+import exceptions.username.MedicalRecordNotCompletedException;
 import exceptions.username.AppointmentUsernameAlreadyExistsException;
-import exceptions.FieldNotCompletedException;
-import exceptions.IncorrectDateException;
+import exceptions.fields.FieldNotCompletedException;
+import exceptions.date.IncorrectDateException;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

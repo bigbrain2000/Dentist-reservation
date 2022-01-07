@@ -1,6 +1,6 @@
 package controllers.register;
 
-import exceptions.FieldNotCompletedException;
+import exceptions.fields.FieldNotCompletedException;
 import exceptions.username.UsernameAlreadyExistsException;
 import exceptions.password.WeakPasswordException;
 import javafx.fxml.FXML;

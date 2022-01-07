@@ -1,7 +1,7 @@
 package controllers.client;
 
 import controllers.login.LoginController;
-import exceptions.FieldNotCompletedException;
+import exceptions.fields.FieldNotCompletedException;
 import exceptions.username.MedicalRecordUsernameAlreadyExistsException;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;

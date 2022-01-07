@@ -1,20 +1,20 @@
-package controllers.client;
+package controllers.dentist;
 
 import controllers.login.LoginController;
-import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.*;
+import javafx.scene.control.Button;
+import javafx.scene.control.TableCell;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
-import javafx.scene.text.Text;
 import model.Appointment;
-import services.AppointmentService;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.ResourceBundle;
 
-public class ClientViewAppointmentController extends ClientPageAbstract implements Initializable {
+public class DentistViewAppointments extends DentistPageAbstract implements Initializable {
 
     @FXML
     private TableView<Appointment> appointmentTableView;
@@ -40,12 +40,6 @@ public class ClientViewAppointmentController extends ClientPageAbstract implemen
     @FXML
     private Button backButton;
 
-    @FXML
-    private Button deleteAppointmentButton;
-
-    @FXML
-    private Text appointmentMessage;
-
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         dateColumn.setCellFactory(column -> new TableCell<>() {
@@ -70,31 +64,6 @@ public class ClientViewAppointmentController extends ClientPageAbstract implemen
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("appointmentDate"));
         dentistNameColumn.setCellValueFactory(new PropertyValueFactory<>("dentistName"));
 
-        appointmentTableView.setItems(LoginController.getAppointmentForClient());
-    }
-
-
-
-    @FXML
-    private void deleteAppointment() {
-        Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
-        alert.setTitle("Delete SERVICE");
-        alert.setHeaderText("Are you sure you want to delete the selected appointment?");
-
-        alert.showAndWait().ifPresent(response -> {
-            if (response == ButtonType.OK)
-                removeSelectedService();
-            else
-                alert.close();
-        });
-    }
-
-    private void removeSelectedService() {
-        ObservableList<Appointment> selectedService = appointmentTableView.getSelectionModel().getSelectedItems();
-
-        for(Appointment appointment : selectedService)
-            AppointmentService.getAppointmentRepository().remove(appointment);
-
-        appointmentTableView.getItems().removeAll(appointmentTableView.getSelectionModel().getSelectedItems());  //select the wanted service
+        appointmentTableView.setItems(LoginController.getAppointmentsForDentist());
     }
 }

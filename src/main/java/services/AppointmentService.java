@@ -1,7 +1,7 @@
 package services;
 
 import exceptions.username.AppointmentUsernameAlreadyExistsException;
-import exceptions.IncorrectDateException;
+import exceptions.date.IncorrectDateException;
 import model.Appointment;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;

@@ -1,7 +1,7 @@
 package services;
 
 import exceptions.username.DentistServiceNameAlreadyExistsException;
-import exceptions.FieldNotCompletedException;
+import exceptions.fields.FieldNotCompletedException;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
 import model.Service;

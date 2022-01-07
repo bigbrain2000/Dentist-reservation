@@ -1,6 +1,6 @@
 package services;
 
-import exceptions.*;
+import exceptions.fields.FieldNotCompletedException;
 import exceptions.password.WeakPasswordException;
 import exceptions.password.WrongPasswordException;
 import exceptions.username.UsernameAlreadyExistsException;
