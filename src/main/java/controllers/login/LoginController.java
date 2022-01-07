@@ -1,6 +1,7 @@
 package controllers.login;
 
-import exceptions.*;
+import exceptions.date.IncorrectDateException;
+import exceptions.fields.FieldNotCompletedException;
 import exceptions.password.WrongPasswordException;
 import exceptions.username.AppointmentUsernameAlreadyExistsException;
 import exceptions.username.MedicalRecordUsernameAlreadyExistsException;
@@ -14,7 +15,6 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import model.Appointment;
@@ -26,7 +26,6 @@ import services.MedicalRecordService;
 import services.UserService;
 import java.io.IOException;
 import java.sql.Date;
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Objects;
 
@@ -236,7 +235,6 @@ public class LoginController {
                 setFieldsForExistingMedicalRecord(medicalRecord, choiceBoxFirstQuestion, choiceBoxSecondQuestion, choiceBoxThirdQuestion, choiceBoxFourthQuestion, vaccinatedComboBox);
     }
 
-
     private static void setFieldsForExistingMedicalRecord(@NotNull MedicalRecord medicalRecord, @NotNull ChoiceBox<String>  choiceBoxFirstQuestion, @NotNull ChoiceBox<String>  choiceBoxSecondQuestion,
                                                           @NotNull ChoiceBox<String>  choiceBoxThirdQuestion, @NotNull ChoiceBox<String>  choiceBoxFourthQuestion, @NotNull ComboBox<String>  vaccinatedComboBox) {
 
@@ -255,13 +253,26 @@ public class LoginController {
     }
 
     @NotNull
-    public static ObservableList<Appointment> getAppointments()  {
+    public static ObservableList<Appointment> getAppointmentForClient()  {
 
         ArrayList<Appointment> appointmentArrayList = new ArrayList<>();
         ObservableList<Appointment> appointmentObservableArrayList = FXCollections.observableArrayList();
 
         for (Appointment appointment : AppointmentService.getAppointmentRepository().find())
             if(Objects.equals(appointment.getUsername(), username))
+                appointmentArrayList.add(appointment);
+
+        appointmentObservableArrayList.addAll(appointmentArrayList);
+        return appointmentObservableArrayList;
+    }
+
+    @NotNull
+    public static ObservableList<Appointment> getAppointmentsForDentist()  {
+
+        ArrayList<Appointment> appointmentArrayList = new ArrayList<>();
+        ObservableList<Appointment> appointmentObservableArrayList = FXCollections.observableArrayList();
+
+        for (Appointment appointment : AppointmentService.getAppointmentRepository().find())
                 appointmentArrayList.add(appointment);
 
         appointmentObservableArrayList.addAll(appointmentArrayList);

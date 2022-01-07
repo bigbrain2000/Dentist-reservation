@@ -5,50 +5,24 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9056ea2-ad44-487d-a219-7b91f9d85aff" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/client/ClientAppointmentController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/client/ClientProfileController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/controllers/login/LoginController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/client/client_medical_record.fxml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/ClientAppointmentController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/ClientMedicalRecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/client/ClientMedicalRecordController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/ClientPageAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/client/ClientPageAbstract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/ClientPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/client/ClientPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/ClientProfileController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DentistAddServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistAddServiceController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DentistAddingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistAddingController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DentistPageAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistPageAbstract.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DentistPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistPageController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DentistProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistProfileController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/DentistViewServicesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistViewServicesController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/LoginController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/register/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/AppointmentUsernameAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/username/AppointmentUsernameAlreadyExistsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/DentistServiceNameAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/username/DentistServiceNameAlreadyExistsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/IncorrectDateException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/IncorrectDateException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/MedicalRecordUsernameAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/username/MedicalRecordUsernameAlreadyExistsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/TableViewSizeException.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/UsernameAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/username/UsernameAlreadyExistsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/UsernameDoesNotExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/username/UsernameDoesNotExistsException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/WeakPasswordException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/password/WeakPasswordException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/WrongPasswordException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/password/WrongPasswordException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/model/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Appointment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/client/ClientAppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/client/ClientAppointmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/client/ClientMedicalRecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/client/ClientMedicalRecordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/client/ClientViewAppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/client/ClientViewAppointmentController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistAddServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistAddServiceController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistAddingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistAddingController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/login/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/login/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/register/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/register/RegistrationController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/DentistServicePriceException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/price/DentistServicePriceException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/FieldNotCompletedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/fields/FieldNotCompletedException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/IncorrectDateException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/date/IncorrectDateException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/MedicalRecordNotCompletedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/username/MedicalRecordNotCompletedException.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/AppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/AppointmentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/DentistService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/DentistService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/services/MedicalRecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/MedicalRecordService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/client_appointment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/client/client_appointment.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/client_medical_record.fxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/client_page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/client/client_page.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/client_profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/client/client_profile.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dentist_add_services.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dentist/dentist_add_services.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dentist_adding.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dentist/dentist_adding.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dentist_page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dentist/dentist_page.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dentist_profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dentist/dentist_profile.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dentist_view_services.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dentist/dentist_view_services.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/user_login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/login/user_login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/user_registration.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/register/user_registration.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/client/client_page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/client/client_page.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dentist/dentist_page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dentist/dentist_page.fxml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

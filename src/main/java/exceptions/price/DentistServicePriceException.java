@@ -1,4 +1,4 @@
-package exceptions;
+package exceptions.price;
 
 public class DentistServicePriceException extends Exception {
     public DentistServicePriceException() {

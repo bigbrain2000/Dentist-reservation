@@ -1,4 +1,4 @@
-package exceptions;
+package exceptions.date;
 
 public class IncorrectDateException extends Exception{
     public IncorrectDateException() {

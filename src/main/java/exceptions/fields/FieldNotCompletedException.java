@@ -1,4 +1,4 @@
-package exceptions;
+package exceptions.fields;
 
 public class FieldNotCompletedException extends Exception {
 

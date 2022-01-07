@@ -1,6 +1,6 @@
 package controllers.dentist;
 
-import exceptions.*;
+import exceptions.fields.FieldNotCompletedException;
 import exceptions.password.WeakPasswordException;
 import exceptions.username.UsernameAlreadyExistsException;
 import javafx.fxml.FXML;

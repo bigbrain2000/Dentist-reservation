@@ -1,8 +1,8 @@
 package controllers.dentist;
 
 import exceptions.username.DentistServiceNameAlreadyExistsException;
-import exceptions.DentistServicePriceException;
-import exceptions.FieldNotCompletedException;
+import exceptions.price.DentistServicePriceException;
+import exceptions.fields.FieldNotCompletedException;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;

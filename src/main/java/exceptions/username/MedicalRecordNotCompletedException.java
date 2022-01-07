@@ -1,4 +1,4 @@
-package exceptions;
+package exceptions.username;
 
 public class MedicalRecordNotCompletedException extends Exception{
 
