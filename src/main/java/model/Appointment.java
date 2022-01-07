@@ -9,20 +9,22 @@ public class Appointment {
     @Id
     private String username;
 
-    private String firstName, secondName, dentistName;
+    private String firstName, secondName, dentistName, serviceName;
+    private float servicePrice;
     private Date appointmentDate;
     private boolean checkMedicalRecord;
 
-    public Appointment(String username, String firstName, String secondName, String dentistName, Date appointmentDate, boolean checkMedicalRecord) {
+    public Appointment() {}
+
+    public Appointment(String username, String firstName, String secondName, String dentistName, String serviceName, float servicePrice, Date appointmentDate, boolean checkMedicalRecord) {
         this.username = username;
         this.firstName = firstName;
         this.secondName = secondName;
         this.dentistName = dentistName;
+        this.serviceName = serviceName;
+        this.servicePrice = servicePrice;
         this.appointmentDate = appointmentDate;
         this.checkMedicalRecord = checkMedicalRecord;
-    }
-
-    public Appointment() {
     }
 
     public String getUsername() {
@@ -57,6 +59,14 @@ public class Appointment {
         this.dentistName = dentistName;
     }
 
+    public String getServiceName() {
+        return serviceName;
+    }
+
+    public void setServiceName(String serviceName) {
+        this.serviceName = serviceName;
+    }
+
     public Date getAppointmentDate() {
         return appointmentDate;
     }
@@ -73,17 +83,25 @@ public class Appointment {
         this.checkMedicalRecord = checkMedicalRecord;
     }
 
+    public float getServicePrice() {
+        return servicePrice;
+    }
+
+    public void setServicePrice(float servicePrice) {
+        this.servicePrice = servicePrice;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Appointment that = (Appointment) o;
-        return checkMedicalRecord == that.checkMedicalRecord && Objects.equals(username, that.username) && Objects.equals(firstName, that.firstName) && Objects.equals(secondName, that.secondName) && Objects.equals(dentistName, that.dentistName) && Objects.equals(appointmentDate, that.appointmentDate);
+        return Float.compare(that.servicePrice, servicePrice) == 0 && checkMedicalRecord == that.checkMedicalRecord && Objects.equals(username, that.username) && Objects.equals(firstName, that.firstName) && Objects.equals(secondName, that.secondName) && Objects.equals(dentistName, that.dentistName) && Objects.equals(serviceName, that.serviceName) && Objects.equals(appointmentDate, that.appointmentDate);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(username, firstName, secondName, dentistName, appointmentDate, checkMedicalRecord);
+        return Objects.hash(username, firstName, secondName, dentistName, serviceName, servicePrice, appointmentDate, checkMedicalRecord);
     }
 
     @Override
@@ -93,6 +111,8 @@ public class Appointment {
                 ", firstName='" + firstName + '\'' +
                 ", secondName='" + secondName + '\'' +
                 ", dentistName='" + dentistName + '\'' +
+                ", serviceName='" + serviceName + '\'' +
+                ", servicePrice=" + servicePrice +
                 ", appointmentDate=" + appointmentDate +
                 ", checkMedicalRecord=" + checkMedicalRecord +
                 '}';

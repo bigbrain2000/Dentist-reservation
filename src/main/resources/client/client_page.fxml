@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="500.0" prefWidth="679.0" style="-fx-background-color: #00BFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.client.ClientPageController">
+   <VBox prefHeight="500.0" prefWidth="242.0">
+      <Label prefHeight="35.0" prefWidth="188.0" text="       Client options">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="25.0" top="60.0" />
+         </VBox.margin>
+      </Label>
+      <Button fx:id="viewProfileButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleViewProfileAction" prefHeight="50.0" prefWidth="192.0" text="View profile">
+         <graphic>
+            <ImageView fitHeight="38.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../images/ProfileLogo.jpg" />
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="14.0" />
+         </font>
+         <padding>
+            <Insets left="-55.0" />
+         </padding>
+         <VBox.margin>
+            <Insets left="25.0" />
+         </VBox.margin>
+      </Button>
+      <Button fx:id="addMedicalRecordButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleAddMedicalRecordAction" prefHeight="50.0" prefWidth="192.0" text="Add medical record">
+         <graphic>
+            <ImageView fitHeight="33.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../images/AddServices.png" />
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="14.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="25.0" />
+         </VBox.margin>
+         <padding>
+            <Insets left="-5.0" />
+         </padding>
+      </Button>
+      <Button fx:id="viewServicesButton" layoutX="35.0" layoutY="255.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="192.0" text="View services">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../images/AppointmentsSearchLogo.png" />
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="14.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="25.0" />
+         </VBox.margin>
+         <padding>
+            <Insets left="-40.0" />
+         </padding>
+      </Button>
+      <Button fx:id="addAppointmentButton" mnemonicParsing="false" onAction="#handleAddAppointmentAction" prefHeight="50.0" prefWidth="192.0" text="Add appointment">
+         <graphic>
+            <ImageView fitHeight="39.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../images/AddDentistsLogo.png" />
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="14.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="25.0" />
+         </VBox.margin>
+         <padding>
+            <Insets left="-15.0" />
+         </padding>
+      </Button>
+      <Button fx:id="viewAppointmentsButton" layoutX="10.0" layoutY="108.0" mnemonicParsing="false" onAction="#handleViewAppointmentAction" prefHeight="50.0" prefWidth="192.0" text="View appointments">
+         <graphic>
+            <ImageView fitHeight="30.0" fitWidth="27.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../images/AppointmentsSearchLogo.png" />
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="14.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="25.0" />
+         </VBox.margin>
+      </Button>
+      <Button fx:id="logoutButton" layoutX="10.0" layoutY="108.0" mnemonicParsing="false" onAction="#handleLoginAction" prefHeight="50.0" prefWidth="192.0" text="Log out">
+         <graphic>
+            <ImageView fitHeight="39.0" fitWidth="32.0" pickOnBounds="true" preserveRatio="true">
+               <Image url="@../images/LogoutLogo.jpg" />
+            </ImageView>
+         </graphic>
+         <font>
+            <Font size="14.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="25.0" />
+         </VBox.margin>
+         <padding>
+            <Insets left="-65.0" />
+         </padding>
+      </Button>
+   </VBox>
+   <HBox layoutX="567.0" prefHeight="40.0" prefWidth="98.0">
+      <Button fx:id="minimizeField" alignment="TOP_RIGHT" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#minimizeWindow" prefHeight="4.0" prefWidth="20.0" style="-fx-background-color: transparent;" text="-">
+         <HBox.margin>
+            <Insets left="30.0" top="-5.0" />
+         </HBox.margin>
+         <padding>
+            <Insets right="10.0" />
+         </padding>
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Button>
+      <Button fx:id="closeField" alignment="TOP_RIGHT" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#closeWindow" style="-fx-background-color: transparent;" text="X">
+         <HBox.margin>
+            <Insets />
+         </HBox.margin>
+         <font>
+            <Font size="14.0" />
+         </font>
+      </Button>
+   </HBox>
+   <TextArea editable="false" layoutX="273.0" layoutY="96.0" prefHeight="377.0" prefWidth="356.0" text="About us&#10;&#10;&#9;Positioned on a downtown street on Timișoara, Dr. Roncea Dental Clinic&#10;makes complex dental services for customers from all over the world. &#10;This is where the patients benefits from integrated medical services, with modern equipment,&#10;which reduces waiting time and improves considerable the quality of their medical procedures.&#10;&#9;Our clinic motto is &quot;Smile and sparkle with whiter healthy teeth&quot;.&#10;Dentists help patients achieve a flawless smile through perfectly aligned teeth.&#10;&#9;Doctor-patient communication is extremely important to us because we want to please every patient.&#10;&#9;The dentists of the Dr. Roncea Dental Clinic in Timișoara want to know aspects about each patient, &#10;so before making a reservation clients must complete a medical file. &#10;This medical file helps dentists to understand  better the cause of each patient's problem and to act quickly.&#10;&#9;There is always a reason to smile with healthy teeth. Find it!">
+      <font>
+         <Font size="16.0" />
+      </font></TextArea>
+</AnchorPane>

@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<StackPane fx:id="stackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="492.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.dentist.DentistAddingController">
+    <BorderPane prefHeight="200.0" prefWidth="200.0">
+        <top>
+            <Pane prefHeight="61.0" prefWidth="600.0" style="-fx-background-color: #C0C0C0;" BorderPane.alignment="CENTER">
+                <Label layoutX="27.0" layoutY="14.0" prefHeight="33.0" prefWidth="377.0" text="Enter the information for the new Dentist">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+            </Pane>
+        </top>
+        <left>
+            <Pane prefHeight="431.0" prefWidth="184.0" BorderPane.alignment="CENTER">
+                <TextField fx:id="usernameField" layoutX="20.0" layoutY="52.0" />
+                <Label layoutX="56.0" layoutY="25.0" prefHeight="27.0" prefWidth="77.0" text="Username">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <Label layoutX="63.0" layoutY="96.0" prefHeight="27.0" prefWidth="77.0" text="Password">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <Button fx:id="backButton" layoutX="20.0" layoutY="380.0" mnemonicParsing="false" onAction="#goBackToDentistPage" prefHeight="37.0" prefWidth="85.0" text="Back">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+            <PasswordField fx:id="passwordField" layoutX="20.0" layoutY="123.0" />
+            </Pane>
+        </left>
+        <center>
+            <Pane prefHeight="339.0" prefWidth="406.0" style="-fx-background-color: #87CEFA;" BorderPane.alignment="CENTER">
+                <Label layoutX="52.0" layoutY="69.0" prefHeight="25.0" prefWidth="84.0" text="First name">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="firstNameField" layoutX="20.0" layoutY="94.0" />
+                <Label layoutX="48.0" layoutY="138.0" prefHeight="25.0" prefWidth="102.0" text="Second name">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="secondNameField" layoutX="20.0" layoutY="163.0" />
+                <Label layoutX="225.0" layoutY="69.0" prefHeight="25.0" prefWidth="116.0" text="Phone number">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="phoneNumberField" layoutX="200.0" layoutY="94.0" />
+                <Label layoutX="232.0" layoutY="212.0" prefHeight="25.0" prefWidth="65.0" text="Address">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="addressField" layoutX="134.0" layoutY="237.0" prefHeight="25.0" prefWidth="248.0" />
+                <Label layoutX="260.0" layoutY="138.0" prefHeight="25.0" prefWidth="45.0" text="Role">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="roleField" layoutX="200.0" layoutY="163.0" />
+                <Button fx:id="createAccountButton" layoutX="232.0" layoutY="382.0" mnemonicParsing="false" onAction="#createNewDentist" prefHeight="35.0" prefWidth="151.0" text="CREATE ACCOUNT" textFill="RED">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <ImageView fx:id="informationalLogo" fitHeight="30.0" fitWidth="33.0" layoutX="184.0" layoutY="385.0" onMouseClicked="#showPasswordNote" pickOnBounds="true" preserveRatio="true">
+                    <Image url="@../images/InformationalLogo.png" />
+                </ImageView>
+            <Label fx:id="passwordNote" layoutX="9.0" layoutY="338.0" prefHeight="25.0" prefWidth="399.0" style="-fx-background-color: #C0C0C0;" text="Password needs to have at least 8 characters, 1 digit and 1 uppercase">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </Label>
+            <Text fx:id="registrationMessage" fill="RED" layoutX="18.0" layoutY="311.0" textAlignment="CENTER" wrappingWidth="393.0">
+               <font>
+                  <Font name="Times New Roman Bold Italic" size="14.0" />
+               </font>
+            </Text>
+            </Pane>
+        </center>
+    </BorderPane>
+</StackPane>

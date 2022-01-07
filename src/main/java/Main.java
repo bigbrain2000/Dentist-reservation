@@ -11,6 +11,8 @@ import services.DentistService;
 import services.MedicalRecordService;
 import services.UserService;
 
+import java.util.Objects;
+
 public class Main extends Application {
 
     private double xoffset, yoffset = 0;
@@ -22,7 +24,7 @@ public class Main extends Application {
         MedicalRecordService.initDatabase();
         AppointmentService.initDatabase();
 
-        Parent root = FXMLLoader.load(getClass().getClassLoader().getResource("user_login.fxml"));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("login/user_login.fxml")));
         primaryStage.getIcons().add(new Image("images/ToothPicture.png"));
         primaryStage.setTitle("Dentist reservation");
         primaryStage.setScene(new Scene(root, 655, 500));

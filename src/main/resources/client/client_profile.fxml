@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.text.Font?>
+
+<StackPane fx:id="stackPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.client.ClientProfileController">
+    <BorderPane prefHeight="200.0" prefWidth="200.0">
+        <top>
+            <Pane prefHeight="61.0" prefWidth="600.0" style="-fx-background-color: #87CEFA;" BorderPane.alignment="CENTER">
+                <Label layoutX="38.0" layoutY="16.0" prefHeight="33.0" prefWidth="116.0" text="My profile">
+                    <font>
+                        <Font name="System Bold" size="18.0" />
+                    </font>
+                </Label>
+            </Pane>
+        </top>
+        <left>
+            <Pane prefHeight="339.0" prefWidth="177.0" BorderPane.alignment="CENTER">
+                <Button fx:id="backButton" layoutX="26.0" layoutY="295.0" mnemonicParsing="false" onAction="#goBackToClientPage" prefHeight="37.0" prefWidth="85.0" text="Back">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <TextField fx:id="usernameField" layoutX="14.0" layoutY="65.0" />
+                <Label layoutX="50.0" layoutY="38.0" prefHeight="27.0" prefWidth="77.0" text="Username">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <Label layoutX="74.0" layoutY="113.0" prefHeight="25.0" prefWidth="45.0" text="Role">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="roleField" layoutX="14.0" layoutY="138.0" />
+            </Pane>
+        </left>
+        <center>
+            <Pane prefHeight="339.0" prefWidth="395.0" style="-fx-background-color: #98FB98;" BorderPane.alignment="CENTER">
+                <Label layoutX="38.0" layoutY="150.0" prefHeight="25.0" prefWidth="116.0" text="Phone number">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="phoneNumberField" layoutX="14.0" layoutY="181.0" />
+                <Label layoutX="273.0" layoutY="153.0" prefHeight="25.0" prefWidth="65.0" text="Address">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="addressField" layoutX="198.0" layoutY="178.0" prefHeight="25.0" prefWidth="218.0" />
+                <Button fx:id="deleteAccountButton" layoutX="233.0" layoutY="291.0" mnemonicParsing="false" onAction="#deleteAccount" prefHeight="35.0" prefWidth="151.0" text="DELETE ACCOUNT" textFill="RED">
+                    <font>
+                        <Font name="System Bold" size="14.0" />
+                    </font>
+                </Button>
+                <Label layoutX="51.0" layoutY="74.0" prefHeight="25.0" prefWidth="84.0" text="First name">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="firstNameField" layoutX="14.0" layoutY="105.0" />
+                <Label layoutX="241.0" layoutY="80.0" prefHeight="25.0" prefWidth="102.0" text="Second name">
+                    <font>
+                        <Font size="16.0" />
+                    </font>
+                </Label>
+                <TextField fx:id="secondNameField" layoutX="211.0" layoutY="105.0" />
+            </Pane>
+        </center>
+    </BorderPane>
+</StackPane>

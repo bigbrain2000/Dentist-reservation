@@ -1,17 +1,13 @@
 package services;
 
-import exceptions.AppointmentUsernameAlreadyExistsException;
+import exceptions.username.AppointmentUsernameAlreadyExistsException;
 import exceptions.IncorrectDateException;
 import model.Appointment;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
-
 import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.time.LocalTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.Objects;
 
@@ -30,10 +26,12 @@ public class AppointmentService {
         appointmentRepository = database.getRepository(Appointment.class);
     }
 
-    public static void addAppointment(String username, String firstName, String secondName, String dentistName, Date appointmentDate, boolean checkMedicalRecord) throws AppointmentUsernameAlreadyExistsException, IncorrectDateException {
+    public static void addAppointment(String username, String firstName, String secondName, String serviceName, float servicePrice, Date appointmentDate,
+                                      String dentistName, boolean checkMedicalRecord) throws AppointmentUsernameAlreadyExistsException, IncorrectDateException {
         checkUsernameAlreadyExists(username);
         checkValidDate(appointmentDate);
-        appointmentRepository.insert(new Appointment(username, firstName, secondName, dentistName, appointmentDate, checkMedicalRecord));
+
+        appointmentRepository.insert(new Appointment(username, firstName, secondName, dentistName,serviceName, servicePrice, appointmentDate, checkMedicalRecord));
     }
 
     private static void checkUsernameAlreadyExists(String username) throws AppointmentUsernameAlreadyExistsException{
@@ -43,8 +41,8 @@ public class AppointmentService {
     }
 
     private static void checkValidDate(@NotNull Date date) throws IncorrectDateException {
-        LocalDateTime currentLocalDateTime =java.time.LocalDateTime.now();
-        Date currentDate = convertToDateViaSqlTimestamp(currentLocalDateTime);
+        LocalDate currentLocalDateTime = java.time.LocalDate.now();
+        Date currentDate = convertToDateViaSqlDate(currentLocalDateTime);
 
         if(!date.after(currentDate)) {
             throw  new IncorrectDateException();
@@ -53,8 +51,8 @@ public class AppointmentService {
 
     @NotNull
     @Contract("_ -> new")
-    private static Date convertToDateViaSqlTimestamp(LocalDateTime dateToConvert) {
-        return java.sql.Timestamp.valueOf(dateToConvert);
+    private static Date convertToDateViaSqlDate(LocalDate dateToConvert) {
+        return java.sql.Date.valueOf(dateToConvert);
     }
 
     public static ObjectRepository<Appointment> getAppointmentRepository() {

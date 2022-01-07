@@ -1,7 +1,6 @@
 package services;
 
-import exceptions.FieldNotCompletedException;
-import exceptions.MedicalRecordUsernameAlreadyExistsException;
+import exceptions.username.MedicalRecordUsernameAlreadyExistsException;
 import model.MedicalRecord;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
@@ -22,9 +21,14 @@ public class MedicalRecordService {
 
         medicalRecordRepository = database.getRepository(MedicalRecord.class);
     }
+    public static void deleteMedicalRecordFromDB(String usernameMedicalRecord) {
+        for (MedicalRecord medicalRecord : medicalRecordRepository.find())
+            if (Objects.equals(usernameMedicalRecord, medicalRecord.getUsername()))
+                medicalRecordRepository.remove(medicalRecord);
+    }
 
     public static void addMedicalRecord(String username, String answerFirstQuestion, String answerSecondQuestion, String answerThirdQuestion,
-                                        String answerFourthQuestion, String vaccinated) throws FieldNotCompletedException, MedicalRecordUsernameAlreadyExistsException {
+                                        String answerFourthQuestion, String vaccinated) throws MedicalRecordUsernameAlreadyExistsException {
         checkMedicalRecordUsernameAlreadyExists(username);
         medicalRecordRepository.insert(new MedicalRecord(username, answerFirstQuestion, answerSecondQuestion, answerThirdQuestion, answerFourthQuestion, vaccinated));
     }
