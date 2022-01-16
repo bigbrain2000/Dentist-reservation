@@ -11,7 +11,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane prefHeight="500.0" prefWidth="679.0" style="-fx-background-color: #00BFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.client.ClientPageController">
+<AnchorPane prefHeight="512.0" prefWidth="1098.0" style="-fx-background-color: #00BFFF;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.client.ClientPageController">
    <VBox prefHeight="500.0" prefWidth="242.0">
       <Label prefHeight="35.0" prefWidth="188.0" text="       Client options">
          <font>
@@ -99,29 +99,29 @@
          </padding>
       </Button>
    </VBox>
-   <HBox layoutX="567.0" prefHeight="40.0" prefWidth="98.0">
-      <Button fx:id="minimizeField" alignment="TOP_RIGHT" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#minimizeWindow" prefHeight="4.0" prefWidth="20.0" style="-fx-background-color: transparent;" text="-">
+   <TextArea editable="false" layoutX="273.0" layoutY="96.0" prefHeight="377.0" prefWidth="787.0" text="About us&#10;&#10;&#9;Positioned on a downtown street on Timișoara, Dr. Roncea Dental Clinic&#10;makes complex dental services for customers from all over the world. &#10;This is where the patients benefits from integrated medical services, with modern equipment,&#10;which reduces waiting time and improves considerable the quality of their medical procedures.&#10;&#9;Our clinic motto is &quot;Smile and sparkle with whiter healthy teeth&quot;.&#10;Dentists help patients achieve a flawless smile through perfectly aligned teeth.&#10;&#9;Doctor-patient communication is extremely important to us because we want to please every patient.&#10;&#9;The dentists of the Dr. Roncea Dental Clinic in Timișoara want to know aspects about each patient, &#10;so before making a reservation clients must complete a medical file. &#10;This medical file helps dentists to understand  better the cause of each patient's problem and to act quickly.&#10;&#9;There is always a reason to smile with healthy teeth. Find it!">
+      <font>
+         <Font size="16.0" />
+      </font></TextArea>
+   <HBox layoutX="1000.0" prefHeight="40.0" prefWidth="98.0">
+      <Button fx:id="minimizeField" alignment="TOP_RIGHT" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#minimizeWindow" prefHeight="35.0" prefWidth="21.0" style="-fx-background-color: transparent;" text="-">
          <HBox.margin>
             <Insets left="30.0" top="-5.0" />
          </HBox.margin>
          <padding>
-            <Insets right="10.0" />
+            <Insets right="5.0" />
          </padding>
          <font>
-            <Font size="24.0" />
+            <Font size="26.0" />
          </font>
       </Button>
       <Button fx:id="closeField" alignment="TOP_RIGHT" contentDisplay="BOTTOM" mnemonicParsing="false" onAction="#closeWindow" style="-fx-background-color: transparent;" text="X">
          <HBox.margin>
-            <Insets />
+            <Insets left="10.0" />
          </HBox.margin>
          <font>
             <Font size="14.0" />
          </font>
       </Button>
    </HBox>
-   <TextArea editable="false" layoutX="273.0" layoutY="96.0" prefHeight="377.0" prefWidth="356.0" text="About us&#10;&#10;&#9;Positioned on a downtown street on Timișoara, Dr. Roncea Dental Clinic&#10;makes complex dental services for customers from all over the world. &#10;This is where the patients benefits from integrated medical services, with modern equipment,&#10;which reduces waiting time and improves considerable the quality of their medical procedures.&#10;&#9;Our clinic motto is &quot;Smile and sparkle with whiter healthy teeth&quot;.&#10;Dentists help patients achieve a flawless smile through perfectly aligned teeth.&#10;&#9;Doctor-patient communication is extremely important to us because we want to please every patient.&#10;&#9;The dentists of the Dr. Roncea Dental Clinic in Timișoara want to know aspects about each patient, &#10;so before making a reservation clients must complete a medical file. &#10;This medical file helps dentists to understand  better the cause of each patient's problem and to act quickly.&#10;&#9;There is always a reason to smile with healthy teeth. Find it!">
-      <font>
-         <Font size="16.0" />
-      </font></TextArea>
 </AnchorPane>

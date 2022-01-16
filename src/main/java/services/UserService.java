@@ -32,6 +32,46 @@ public class UserService {
         userRepository = database.getRepository(User.class);
     }
 
+    public static String getUserFirstName(String username) {
+        for (User user : UserService.getUsers().find())
+            if (Objects.equals(username, user.getUsername()))
+                return user.getFirstName();
+
+        return "";
+    }
+
+    public static String getUserSecondName(String username) {
+        for (User user : UserService.getUsers().find())
+            if (Objects.equals(username, user.getUsername()))
+                return user.getSecondName();
+
+        return "";
+    }
+
+    public static String getUserAddress(String username) {
+        for (User user : UserService.getUsers().find())
+            if (Objects.equals(username, user.getUsername()))
+                return user.getAddress();
+
+        return "";
+    }
+
+    public static String getUserPhoneNumber(String username) {
+        for (User user : UserService.getUsers().find())
+            if (Objects.equals(username, user.getUsername()))
+                return user.getPhoneNumber();
+
+        return "";
+    }
+
+    public static String getUserRole(String username) {
+        for (User user : UserService.getUsers().find())
+            if (Objects.equals(username, user.getUsername()))
+                return user.getRole();
+
+        return "";
+    }
+
     public static void deleteUser(String username) {
         for (User user : userRepository.find())
             if (Objects.equals(username, user.getUsername()))

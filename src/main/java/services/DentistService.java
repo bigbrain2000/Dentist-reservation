@@ -66,7 +66,7 @@ public class DentistService {
         return dentistServiceList;
     }
 
-    public static void getDentistServicePriceBasedOnName(@NotNull ChoiceBox<String> dentistServiceName, @NotNull TextField dentistServicePrice) {
+    public static void getDentistServicePriceBasedOnServiceName(@NotNull ChoiceBox<String> dentistServiceName, @NotNull TextField dentistServicePrice) {
         for(Service service : dentistRepository.find())
             if(Objects.equals(service.getName(), dentistServiceName.getValue()))
                 dentistServicePrice.setText(String.valueOf(service.getPrice()));

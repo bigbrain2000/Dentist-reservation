@@ -36,6 +36,7 @@
                         <Font size="16.0" />
                     </font>
                 </Label>
+                <!--suppress JavaFxEventHandler -->
                 <Button fx:id="backButton" layoutX="20.0" layoutY="380.0" mnemonicParsing="false" onAction="#goBackToDentistPage" prefHeight="37.0" prefWidth="85.0" text="Back">
                     <font>
                         <Font size="14.0" />
@@ -45,7 +46,7 @@
             </Pane>
         </left>
         <center>
-            <Pane prefHeight="339.0" prefWidth="406.0" style="-fx-background-color: #87CEFA;" BorderPane.alignment="CENTER">
+            <Pane prefHeight="339.0" prefWidth="406.0" style="-fx-background-color: #9abedb;" BorderPane.alignment="CENTER">
                 <Label layoutX="52.0" layoutY="69.0" prefHeight="25.0" prefWidth="84.0" text="First name">
                     <font>
                         <Font size="16.0" />

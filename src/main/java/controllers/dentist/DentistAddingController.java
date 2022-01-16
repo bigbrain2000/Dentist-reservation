@@ -3,6 +3,7 @@ package controllers.dentist;
 import exceptions.fields.FieldNotCompletedException;
 import exceptions.password.WeakPasswordException;
 import exceptions.username.UsernameAlreadyExistsException;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
@@ -15,11 +16,13 @@ import javafx.scene.layout.StackPane;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
+import org.jetbrains.annotations.NotNull;
 import services.UserService;
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class DentistAddingController extends DentistPageAbstract implements Initializable {
+public class DentistAddingController implements Initializable, DentistPageInterface {
 
     @FXML
     private StackPane stackPane;
@@ -134,5 +137,10 @@ public class DentistAddingController extends DentistPageAbstract implements Init
         UserService.addUser(usernameField.getText(), passwordField.getText(),
                 firstNameField.getText(), secondNameField.getText(), phoneNumberField.getText(),
                 addressField.getText(), "Dentist");
+    }
+
+    @Override
+    public void goBackToDentistPage(@NotNull ActionEvent event) throws IOException {
+        DentistPageInterface.super.goBackToDentistPage(event);
     }
 }

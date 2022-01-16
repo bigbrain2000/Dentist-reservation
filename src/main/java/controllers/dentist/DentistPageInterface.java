@@ -10,14 +10,14 @@ import javafx.stage.Stage;
 import org.jetbrains.annotations.NotNull;
 import java.io.IOException;
 
-public abstract class DentistPageAbstract {
+public interface DentistPageInterface {
 
     @FXML
-    public void goBackToDentistPage(@NotNull ActionEvent event) throws IOException {
+    default void goBackToDentistPage(@NotNull ActionEvent event) throws IOException {
         FXMLLoader Loader = new FXMLLoader();
         Loader.setLocation(getClass().getClassLoader().getResource("dentist/dentist_page.fxml"));
         Parent viewUserLogin = Loader.load();
-        Scene loginScene = new Scene(viewUserLogin, 650, 500);
+        Scene loginScene = new Scene(viewUserLogin, 1098, 512);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(loginScene);
         window.show();

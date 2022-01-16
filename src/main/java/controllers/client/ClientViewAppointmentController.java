@@ -1,20 +1,30 @@
 package controllers.client;
 
 import controllers.login.LoginController;
+import controllers.user.UserAppointmentViewAbstract;
+import exceptions.username.UserNotSelectedException;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.text.Text;
 import model.Appointment;
+import model.MedicalRecord;
+import model.User;
+import org.jetbrains.annotations.NotNull;
 import services.AppointmentService;
+import services.MedicalRecordService;
+
+import java.io.IOException;
 import java.net.URL;
-import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
-public class ClientViewAppointmentController extends ClientPageAbstract implements Initializable {
+public class ClientViewAppointmentController extends UserAppointmentViewAbstract implements Initializable, ClientPageInterface {
 
     @FXML
     private TableView<Appointment> appointmentTableView;
@@ -46,34 +56,28 @@ public class ClientViewAppointmentController extends ClientPageAbstract implemen
     @FXML
     private Text appointmentMessage;
 
+    private static final User loggedUser =  LoginController.getLoggedUser();
+
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        dateColumn.setCellFactory(column -> new TableCell<>() {
-            private final SimpleDateFormat FORMAT = new SimpleDateFormat("dd.MM.yyyy");
+        initializeTableView(firstNameColumn, secondNameColumn, serviceNameColumn, servicePriceColumn, dateColumn, dentistNameColumn);
 
-            @Override
-            protected void updateItem(java.util.Date item, boolean empty) {
-                super.updateItem(item, empty);
-                if(empty) {
-                    setText(null);
-                }
-                else {
-                    setText(FORMAT.format(item));
-                }
-            }
-        });
-
-        firstNameColumn.setCellValueFactory(new PropertyValueFactory<>("firstName"));
-        secondNameColumn.setCellValueFactory(new PropertyValueFactory<>("secondName"));
-        serviceNameColumn.setCellValueFactory(new PropertyValueFactory<>("serviceName"));
-        servicePriceColumn.setCellValueFactory(new PropertyValueFactory<>("servicePrice"));
-        dateColumn.setCellValueFactory(new PropertyValueFactory<>("appointmentDate"));
-        dentistNameColumn.setCellValueFactory(new PropertyValueFactory<>("dentistName"));
-
-        appointmentTableView.setItems(LoginController.getAppointmentForClient());
+        appointmentTableView.setItems(getAppointmentForClient());
     }
 
+    @NotNull
+    private ObservableList<Appointment> getAppointmentForClient()  {
 
+        ArrayList<Appointment> appointmentArrayList = new ArrayList<>();
+        ObservableList<Appointment> appointmentObservableArrayList = FXCollections.observableArrayList();
+
+        for (Appointment appointment : AppointmentService.getAppointmentRepository().find())
+            if(Objects.equals(appointment.getUsername(), loggedUser.getUsername()))
+                appointmentArrayList.add(appointment);
+
+        appointmentObservableArrayList.addAll(appointmentArrayList);
+        return appointmentObservableArrayList;
+    }
 
     @FXML
     private void deleteAppointment() {
@@ -82,19 +86,37 @@ public class ClientViewAppointmentController extends ClientPageAbstract implemen
         alert.setHeaderText("Are you sure you want to delete the selected appointment?");
 
         alert.showAndWait().ifPresent(response -> {
-            if (response == ButtonType.OK)
-                removeSelectedService();
+            if (response == ButtonType.OK) {
+                try {
+                    removeSelectedService();
+
+                } catch (UserNotSelectedException e) {
+                    appointmentMessage.setVisible(true);
+                    appointmentMessage.setText(e.getMessage());
+                }
+            }
             else
+                appointmentMessage.setVisible(false);
                 alert.close();
         });
     }
 
-    private void removeSelectedService() {
-        ObservableList<Appointment> selectedService = appointmentTableView.getSelectionModel().getSelectedItems();
+    private void removeSelectedService() throws UserNotSelectedException {
 
-        for(Appointment appointment : selectedService)
-            AppointmentService.getAppointmentRepository().remove(appointment);
+        if(Objects.equals(appointmentTableView.getSelectionModel().getSelectedItem(), null))
+            throw new UserNotSelectedException();
+        else {
+            ObservableList<Appointment> selectedService = appointmentTableView.getSelectionModel().getSelectedItems();
 
-        appointmentTableView.getItems().removeAll(appointmentTableView.getSelectionModel().getSelectedItems());  //select the wanted service
+            for(Appointment appointment : selectedService)
+                AppointmentService.getAppointmentRepository().remove(appointment);
+
+            appointmentTableView.getItems().removeAll(appointmentTableView.getSelectionModel().getSelectedItems());  //select the wanted service
+        }
+    }
+
+    @Override
+    public void goBackToClientPage(@NotNull ActionEvent event) throws IOException {
+        ClientPageInterface.super.goBackToClientPage(event);
     }
 }

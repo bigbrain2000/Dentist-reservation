@@ -1,0 +1,7 @@
+.table-column {
+    -fx-alignment: CENTER;
+}
+
+.table-view .corner {
+    -fx-background-color: transparent;
+}

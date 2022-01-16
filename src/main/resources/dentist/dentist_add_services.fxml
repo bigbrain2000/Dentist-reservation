@@ -22,6 +22,7 @@
       </top>
       <left>
          <Pane prefHeight="359.0" prefWidth="211.0" BorderPane.alignment="CENTER">
+            <!--suppress JavaFxEventHandler -->
             <Button fx:id="backButton" layoutX="27.0" layoutY="308.0" mnemonicParsing="false" onAction="#goBackToDentistPage" prefHeight="37.0" prefWidth="85.0" text="Back">
                <font>
                   <Font size="14.0" />
@@ -35,7 +36,7 @@
          </Pane>
       </left>
       <center>
-         <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #ADD8E6;" BorderPane.alignment="CENTER">
+         <Pane prefHeight="200.0" prefWidth="200.0" style="-fx-background-color: #9abedb;" BorderPane.alignment="CENTER">
             <TextField fx:id="serviceNameField" layoutX="97.0" layoutY="57.0" prefHeight="30.0" prefWidth="219.0" promptText="e.g. Extraction">
                <font>
                   <Font size="14.0" />

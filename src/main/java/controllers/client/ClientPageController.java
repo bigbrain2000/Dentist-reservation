@@ -20,9 +20,6 @@ public class ClientPageController {
     private Button addMedicalRecordButton;
 
     @FXML
-    private Button viewServicesButton;
-
-    @FXML
     private Button addAppointmentButton;
 
     @FXML
