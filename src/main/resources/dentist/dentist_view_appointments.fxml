@@ -7,8 +7,10 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="433.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.dentist.DentistViewAppointments">
+<?import java.net.URL?>
+<AnchorPane prefHeight="433.0" prefWidth="802.0" style="-fx-background-color: #9abedb;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.dentist.DentistViewAppointmentsController">
     <Pane prefHeight="61.0" prefWidth="802.0" style="-fx-background-color: #C0C0C0;">
         <Label layoutX="31.0" layoutY="14.0" prefHeight="33.0" prefWidth="162.0" text="My appointment">
             <font>
@@ -26,9 +28,23 @@
             <TableColumn fx:id="dentistNameColumn" prefWidth="146.0" text="Dentist name" />
         </columns>
     </TableView>
+    <!--suppress JavaFxEventHandler -->
     <Button fx:id="backButton" layoutX="29.0" layoutY="363.0" mnemonicParsing="false" onAction="#goBackToDentistPage" prefHeight="43.0" prefWidth="85.0" text="Back">
         <font>
             <Font size="14.0" />
         </font>
     </Button>
+   <Button fx:id="viewMedicalRecordButton" layoutX="578.0" layoutY="363.0" mnemonicParsing="false" onAction="#viewMedicalRecord" prefHeight="43.0" prefWidth="162.0" text="View medical record" textFill="#0f8651">
+      <font>
+         <Font name="System Bold" size="14.0" />
+      </font>
+   </Button>
+   <Text fx:id="viewMedicalRecordMessage" fill="RED" layoutX="234.0" layoutY="388.0" textAlignment="RIGHT" wrappingWidth="317.0">
+      <font>
+         <Font name="Times New Roman Bold Italic" size="14.0" />
+      </font>
+   </Text>
+    <stylesheets>
+        <URL value="@../appointmentTablesViewStyle.css" />
+    </stylesheets>
 </AnchorPane>

@@ -9,7 +9,8 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="433.0" prefWidth="802.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.client.ClientViewAppointmentController">
+<?import java.net.URL?>
+<AnchorPane prefHeight="433.0" prefWidth="802.0" style="-fx-background-color: #9abedb;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controllers.client.ClientViewAppointmentController">
     <Pane prefHeight="61.0" prefWidth="802.0" style="-fx-background-color: #C0C0C0;">
         <Label layoutX="31.0" layoutY="14.0" prefHeight="33.0" prefWidth="162.0" text="My appointment">
             <font>
@@ -27,19 +28,23 @@
          <TableColumn fx:id="dentistNameColumn" prefWidth="146.0" text="Dentist name" />
       </columns>
     </TableView>
-    <Button fx:id="backButton" layoutX="29.0" layoutY="363.0" mnemonicParsing="false" onAction="#goBackToClientPage" prefHeight="43.0" prefWidth="85.0" text="Back">
+    <!--suppress JavaFxEventHandler -->
+    <Button fx:id="backButton" layoutX="18.0" layoutY="363.0" mnemonicParsing="false" onAction="#goBackToClientPage" prefHeight="43.0" prefWidth="85.0" text="Back">
         <font>
           <Font size="14.0" />
         </font>
     </Button>
-    <Button fx:id="deleteAppointmentButton" layoutX="468.0" layoutY="363.0" mnemonicParsing="false" onAction="#deleteAppointment" prefHeight="43.0" prefWidth="179.0" text="DELETE APPOINTMENT" textFill="RED">
+    <Button fx:id="deleteAppointmentButton" layoutX="601.0" layoutY="363.0" mnemonicParsing="false" onAction="#deleteAppointment" prefHeight="43.0" prefWidth="179.0" text="DELETE APPOINTMENT" textFill="RED">
         <font>
           <Font name="System Bold" size="14.0" />
         </font>
     </Button>
-    <Text fx:id="appointmentMessage" fill="RED" layoutX="243.0" layoutY="326.0" textAlignment="RIGHT" wrappingWidth="415.0">
+    <Text fx:id="appointmentMessage" fill="RED" layoutX="153.0" layoutY="388.0" textAlignment="RIGHT" wrappingWidth="415.0">
         <font>
           <Font name="Times New Roman Bold Italic" size="14.0" />
         </font>
     </Text>
+    <stylesheets>
+        <URL value="@../appointmentTablesViewStyle.css" />
+    </stylesheets>
 </AnchorPane>
