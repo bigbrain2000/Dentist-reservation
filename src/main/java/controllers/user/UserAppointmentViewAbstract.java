@@ -1,47 +1,18 @@
-package controllers.dentist;
+package controllers.user;
 
-import controllers.login.LoginController;
-import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
 import javafx.scene.control.TableCell;
 import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.Appointment;
-import java.net.URL;
+import org.jetbrains.annotations.NotNull;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.ResourceBundle;
 
-public class DentistViewAppointments extends DentistPageAbstract implements Initializable {
+public abstract class UserAppointmentViewAbstract {
 
-    @FXML
-    private TableView<Appointment> appointmentTableView;
+    public void initializeTableView(@NotNull TableColumn<Appointment, String> firstNameColumn, @NotNull TableColumn<Appointment, String> secondNameColumn, @NotNull TableColumn<Appointment, String> serviceNameColumn,
+                                    @NotNull TableColumn<Appointment, Float> servicePriceColumn, @NotNull TableColumn<Appointment, Date> dateColumn, @NotNull TableColumn<Appointment, String> dentistNameColumn) {
 
-    @FXML
-    private TableColumn<Appointment, String> firstNameColumn;
-
-    @FXML
-    private TableColumn<Appointment, String> secondNameColumn;
-
-    @FXML
-    private TableColumn<Appointment, String> serviceNameColumn;
-
-    @FXML
-    private TableColumn<Appointment, Float> servicePriceColumn;
-
-    @FXML
-    private TableColumn<Appointment, Date> dateColumn;
-
-    @FXML
-    private TableColumn<Appointment, String> dentistNameColumn;
-
-    @FXML
-    private Button backButton;
-
-    @Override
-    public void initialize(URL location, ResourceBundle resources) {
         dateColumn.setCellFactory(column -> new TableCell<>() {
             private final SimpleDateFormat FORMAT = new SimpleDateFormat("dd.MM.yyyy");
 
@@ -63,7 +34,5 @@ public class DentistViewAppointments extends DentistPageAbstract implements Init
         servicePriceColumn.setCellValueFactory(new PropertyValueFactory<>("servicePrice"));
         dateColumn.setCellValueFactory(new PropertyValueFactory<>("appointmentDate"));
         dentistNameColumn.setCellValueFactory(new PropertyValueFactory<>("dentistName"));
-
-        appointmentTableView.setItems(LoginController.getAppointmentsForDentist());
     }
 }

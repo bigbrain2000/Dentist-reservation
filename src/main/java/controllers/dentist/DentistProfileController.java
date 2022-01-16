@@ -1,6 +1,7 @@
 package controllers.dentist;
 
-import controllers.login.LoginController;
+import controllers.user.UserProfileAbstract;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -18,7 +19,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-public class DentistProfileController extends DentistPageAbstract implements Initializable {
+public class DentistProfileController extends UserProfileAbstract implements Initializable, DentistPageInterface {
 
     @FXML
     private TextField usernameField;
@@ -49,7 +50,7 @@ public class DentistProfileController extends DentistPageAbstract implements Ini
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
-        LoginController.setTextFieldsForProfileBasedOnUsername(usernameField, firstNameField, secondNameField, addressField, phoneNumberField, roleField);
+        setTextFieldsForProfileBasedOnUsername(usernameField, firstNameField, secondNameField, addressField, phoneNumberField, roleField);
     }
 
     private void loadRegisterFXML(@NotNull javafx.event.ActionEvent event) throws IOException {
@@ -70,7 +71,7 @@ public class DentistProfileController extends DentistPageAbstract implements Ini
 
         alert.showAndWait().ifPresent(response -> {
             if (response == ButtonType.OK ) {
-                LoginController.deleteUserFromDB();
+                UserProfileAbstract.deleteUserFromDB();
 
                 try {
                     loadRegisterFXML(event);
@@ -80,5 +81,10 @@ public class DentistProfileController extends DentistPageAbstract implements Ini
             }else
                 alert.close();
         });
+    }
+
+    @Override
+    public void goBackToDentistPage(@NotNull ActionEvent event) throws IOException {
+        DentistPageInterface.super.goBackToDentistPage(event);
     }
 }

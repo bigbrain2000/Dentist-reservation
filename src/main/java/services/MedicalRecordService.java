@@ -5,7 +5,6 @@ import model.MedicalRecord;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
 import java.util.Objects;
-
 import static services.FileSystemService.getPathToFile;
 
 public class MedicalRecordService {

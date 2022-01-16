@@ -3,6 +3,7 @@ package controllers.dentist;
 import exceptions.username.DentistServiceNameAlreadyExistsException;
 import exceptions.price.DentistServicePriceException;
 import exceptions.fields.FieldNotCompletedException;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
@@ -16,7 +17,7 @@ import org.jetbrains.annotations.NotNull;
 import services.DentistService;
 import java.io.IOException;
 
-public class DentistAddServiceController extends DentistPageAbstract {
+public class DentistAddServiceController implements DentistPageInterface {
 
     @FXML
     private Button backButton;
@@ -71,5 +72,10 @@ public class DentistAddServiceController extends DentistPageAbstract {
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(loginScene);
         window.show();
+    }
+
+    @Override
+    public void goBackToDentistPage(@NotNull ActionEvent event) throws IOException {
+        DentistPageInterface.super.goBackToDentistPage(event);
     }
 }
