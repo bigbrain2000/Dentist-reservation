@@ -24,7 +24,7 @@ public class Main extends Application {
         MedicalRecordService.initDatabase();
         AppointmentService.initDatabase();
 
-        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("login/user_login.fxml")));
+        Parent root = FXMLLoader.load(Objects.requireNonNull(getClass().getClassLoader().getResource("loginFXML/user_login.fxml")));
         primaryStage.getIcons().add(new Image("images/ToothPicture.png"));
         primaryStage.setTitle("Dentist reservation");
         primaryStage.setScene(new Scene(root, 655, 500));

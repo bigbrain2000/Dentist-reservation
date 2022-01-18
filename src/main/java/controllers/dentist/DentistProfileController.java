@@ -15,6 +15,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import org.jetbrains.annotations.NotNull;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -55,7 +56,7 @@ public class DentistProfileController extends UserProfileAbstract implements Ini
 
     private void loadRegisterFXML(@NotNull javafx.event.ActionEvent event) throws IOException {
         FXMLLoader Loader = new FXMLLoader();
-        Loader.setLocation(getClass().getClassLoader().getResource("register/user_registration.fxml"));
+        Loader.setLocation(getClass().getClassLoader().getResource("registerFXML/user_registration.fxml"));
         Parent viewUserLogin = Loader.load();
         Scene loginScene = new Scene(viewUserLogin, 650, 500);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -64,13 +65,13 @@ public class DentistProfileController extends UserProfileAbstract implements Ini
     }
 
     @FXML
-    private void deleteAccount(javafx.event.ActionEvent event){
+    private void deleteAccount(javafx.event.ActionEvent event) {
         Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
         alert.setTitle("Delete account");
         alert.setHeaderText("Are you sure you want to delete this account? ");
 
         alert.showAndWait().ifPresent(response -> {
-            if (response == ButtonType.OK ) {
+            if (response == ButtonType.OK) {
                 UserProfileAbstract.deleteUserFromDB();
 
                 try {
@@ -78,7 +79,7 @@ public class DentistProfileController extends UserProfileAbstract implements Ini
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-            }else
+            } else
                 alert.close();
         });
     }

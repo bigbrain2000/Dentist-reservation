@@ -10,15 +10,18 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
+import model.Service;
 import model.User;
 import org.jetbrains.annotations.NotNull;
 import services.AppointmentService;
 import services.DentistService;
 import services.MedicalRecordService;
 import services.UserService;
+
 import java.io.IOException;
 import java.net.URL;
 import java.sql.Date;
+import java.util.Objects;
 import java.util.ResourceBundle;
 
 public class ClientAppointmentController implements Initializable, ClientPageInterface {
@@ -53,7 +56,7 @@ public class ClientAppointmentController implements Initializable, ClientPageInt
     @FXML
     private Button createAppointmentButton;
 
-    private static final User loggedUser =  LoginController.getLoggedUser();
+    private static final User loggedUser = LoginController.getLoggedUser();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -63,9 +66,15 @@ public class ClientAppointmentController implements Initializable, ClientPageInt
         dentistServicesChoiceBox.getItems().addAll(DentistService.getDentistServiceNameList()); //add all service names in the ChoiceBox
 
         dentistServicesChoiceBox.setOnAction(e -> {
-            if(dentistServicesChoiceBox.getValue() != null)
-               DentistService.getDentistServicePriceBasedOnServiceName(dentistServicesChoiceBox, dentistServicePriceField);
+            if (dentistServicesChoiceBox.getValue() != null)
+                getDentistServicePriceBasedOnServiceName(dentistServicesChoiceBox, dentistServicePriceField);
         });
+    }
+
+    public static void getDentistServicePriceBasedOnServiceName(@NotNull ChoiceBox<String> dentistServiceName, @NotNull TextField dentistServicePrice) {
+        for (Service service : DentistService.getDentistRepository().find())
+            if (Objects.equals(service.getName(), dentistServiceName.getValue()))
+                dentistServicePrice.setText(String.valueOf(service.getPrice()));
     }
 
     private void setFieldsForAppointmentBasedOnUserName(@NotNull TextField firstNameField, @NotNull TextField secondNameField) {
@@ -78,12 +87,12 @@ public class ClientAppointmentController implements Initializable, ClientPageInt
 
     @FXML
     private void createAppointment(ActionEvent event) {
-        try{
+        try {
             insertAppointmentIntoDBIfMedicalRecord();
             appointmentMessage.setText("Appointment successfully added!");
             clearFields();
 
-        }catch (AppointmentUsernameAlreadyExistsException | FieldNotCompletedException | IncorrectDateException | MedicalRecordNotCompletedException e) {
+        } catch (AppointmentUsernameAlreadyExistsException | FieldNotCompletedException | IncorrectDateException | MedicalRecordNotCompletedException e) {
             appointmentMessage.setText(e.getMessage());
         }
     }
@@ -92,24 +101,24 @@ public class ClientAppointmentController implements Initializable, ClientPageInt
         checkIfFieldsAreCompleted();
 
         //is completed
-        if(MedicalRecordService.isMedicalRecordCompleted(loggedUser.getUsername()))
-          insertAppointmentInDB(firstNameField, secondNameField, dentistServicesChoiceBox, dentistServicePriceField, dateField, dentistNameChoiceBox, medicalRecordCheckField);
+        if (MedicalRecordService.isMedicalRecordCompleted(loggedUser.getUsername()))
+            insertAppointmentInDB(firstNameField, secondNameField, dentistServicesChoiceBox, dentistServicePriceField, dateField, dentistNameChoiceBox, medicalRecordCheckField);
 
         //is not completed
-        if(!MedicalRecordService.isMedicalRecordCompleted(loggedUser.getUsername()))
+        if (!MedicalRecordService.isMedicalRecordCompleted(loggedUser.getUsername()))
             throw new MedicalRecordNotCompletedException();
     }
 
     private void checkIfFieldsAreCompleted() throws FieldNotCompletedException {
-        if(dentistServicesChoiceBox.getValue() == null || dateField.getValue() == null || dentistNameChoiceBox.getValue() == null || !medicalRecordCheckField.isSelected())
+        if (dentistServicesChoiceBox.getValue() == null || dateField.getValue() == null || dentistNameChoiceBox.getValue() == null || !medicalRecordCheckField.isSelected())
             throw new FieldNotCompletedException();
     }
 
-    public static void insertAppointmentInDB(@NotNull TextField firstNameField, @NotNull TextField secondNameField,  @NotNull ChoiceBox<String> serviceNameChoiceBox, @NotNull TextField servicePrice,
+    public static void insertAppointmentInDB(@NotNull TextField firstNameField, @NotNull TextField secondNameField, @NotNull ChoiceBox<String> serviceNameChoiceBox, @NotNull TextField servicePrice,
                                              @NotNull DatePicker dateField, @NotNull ChoiceBox<String> dentistNameChoiceBox, @NotNull CheckBox medicalRecordCheckField) throws IncorrectDateException, AppointmentUsernameAlreadyExistsException {
 
-        AppointmentService.addAppointment(loggedUser.getUsername(), firstNameField.getText(), secondNameField.getText(),serviceNameChoiceBox.getValue(), Float.parseFloat(servicePrice.getText()),
-                Date.valueOf(dateField.getValue()),  dentistNameChoiceBox.getValue(),medicalRecordCheckField.isSelected());
+        AppointmentService.addAppointment(loggedUser.getUsername(), firstNameField.getText(), secondNameField.getText(), serviceNameChoiceBox.getValue(), Float.parseFloat(servicePrice.getText()),
+                Date.valueOf(dateField.getValue()), dentistNameChoiceBox.getValue(), medicalRecordCheckField.isSelected());
     }
 
     private void clearFields() {

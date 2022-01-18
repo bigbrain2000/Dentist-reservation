@@ -1,5 +1,6 @@
 .table-column {
     -fx-alignment: CENTER;
+    -fx-font-size: 14px;
 }
 
 .table-view .corner {

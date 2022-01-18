@@ -9,6 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 import org.jetbrains.annotations.NotNull;
+
 import java.io.IOException;
 
 public class ClientPageController {
@@ -37,7 +38,7 @@ public class ClientPageController {
     @FXML
     private void handleViewProfileAction(@NotNull javafx.event.ActionEvent event) throws IOException {
         FXMLLoader Loader = new FXMLLoader();
-        Loader.setLocation(getClass().getClassLoader().getResource("client/client_profile.fxml"));
+        Loader.setLocation(getClass().getClassLoader().getResource("clientFXML/client_profile.fxml"));
         Parent viewUserLogin = Loader.load();
         Scene loginScene = new Scene(viewUserLogin, 600, 420);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -48,7 +49,7 @@ public class ClientPageController {
     @FXML
     private void handleLoginAction(@NotNull javafx.event.ActionEvent event) throws IOException {
         FXMLLoader Loader = new FXMLLoader();
-        Loader.setLocation(getClass().getClassLoader().getResource("login/user_login.fxml"));
+        Loader.setLocation(getClass().getClassLoader().getResource("loginFXML/user_login.fxml"));
         Parent viewUserLogin = Loader.load();
         Scene loginScene = new Scene(viewUserLogin, 654, 500);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -59,7 +60,7 @@ public class ClientPageController {
     @FXML
     private void handleAddMedicalRecordAction(@NotNull javafx.event.ActionEvent event) throws IOException {
         FXMLLoader Loader = new FXMLLoader();
-        Loader.setLocation(getClass().getClassLoader().getResource("client/client_medical_record.fxml"));
+        Loader.setLocation(getClass().getClassLoader().getResource("clientFXML/client_medical_record.fxml"));
         Parent viewUserLogin = Loader.load();
         Scene loginScene = new Scene(viewUserLogin, 600, 400);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -70,7 +71,7 @@ public class ClientPageController {
     @FXML
     private void handleAddAppointmentAction(@NotNull javafx.event.ActionEvent event) throws IOException {
         FXMLLoader Loader = new FXMLLoader();
-        Loader.setLocation(getClass().getClassLoader().getResource("client/client_appointment.fxml"));
+        Loader.setLocation(getClass().getClassLoader().getResource("clientFXML/client_appointment.fxml"));
         Parent viewUserLogin = Loader.load();
         Scene loginScene = new Scene(viewUserLogin, 600, 500);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -81,7 +82,7 @@ public class ClientPageController {
     @FXML
     private void handleViewAppointmentAction(@NotNull javafx.event.ActionEvent event) throws IOException {
         FXMLLoader Loader = new FXMLLoader();
-        Loader.setLocation(getClass().getClassLoader().getResource("client/client_view_appointment.fxml"));
+        Loader.setLocation(getClass().getClassLoader().getResource("clientFXML/client_view_appointment.fxml"));
         Parent viewUserLogin = Loader.load();
         Scene loginScene = new Scene(viewUserLogin, 802, 433);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

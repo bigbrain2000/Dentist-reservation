@@ -11,11 +11,9 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.text.Text;
 import model.Appointment;
-import model.MedicalRecord;
 import model.User;
 import org.jetbrains.annotations.NotNull;
 import services.AppointmentService;
-import services.MedicalRecordService;
 
 import java.io.IOException;
 import java.net.URL;
@@ -56,7 +54,7 @@ public class ClientViewAppointmentController extends UserAppointmentViewAbstract
     @FXML
     private Text appointmentMessage;
 
-    private static final User loggedUser =  LoginController.getLoggedUser();
+    private static final User loggedUser = LoginController.getLoggedUser();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
@@ -66,13 +64,13 @@ public class ClientViewAppointmentController extends UserAppointmentViewAbstract
     }
 
     @NotNull
-    private ObservableList<Appointment> getAppointmentForClient()  {
+    private ObservableList<Appointment> getAppointmentForClient() {
 
         ArrayList<Appointment> appointmentArrayList = new ArrayList<>();
         ObservableList<Appointment> appointmentObservableArrayList = FXCollections.observableArrayList();
 
         for (Appointment appointment : AppointmentService.getAppointmentRepository().find())
-            if(Objects.equals(appointment.getUsername(), loggedUser.getUsername()))
+            if (Objects.equals(appointment.getUsername(), loggedUser.getUsername()))
                 appointmentArrayList.add(appointment);
 
         appointmentObservableArrayList.addAll(appointmentArrayList);
@@ -94,21 +92,20 @@ public class ClientViewAppointmentController extends UserAppointmentViewAbstract
                     appointmentMessage.setVisible(true);
                     appointmentMessage.setText(e.getMessage());
                 }
-            }
-            else
+            } else
                 appointmentMessage.setVisible(false);
-                alert.close();
+            alert.close();
         });
     }
 
     private void removeSelectedService() throws UserNotSelectedException {
 
-        if(Objects.equals(appointmentTableView.getSelectionModel().getSelectedItem(), null))
+        if (Objects.equals(appointmentTableView.getSelectionModel().getSelectedItem(), null))
             throw new UserNotSelectedException();
         else {
             ObservableList<Appointment> selectedService = appointmentTableView.getSelectionModel().getSelectedItems();
 
-            for(Appointment appointment : selectedService)
+            for (Appointment appointment : selectedService)
                 AppointmentService.getAppointmentRepository().remove(appointment);
 
             appointmentTableView.getItems().removeAll(appointmentTableView.getSelectionModel().getSelectedItems());  //select the wanted service

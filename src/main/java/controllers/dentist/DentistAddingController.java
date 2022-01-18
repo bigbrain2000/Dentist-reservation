@@ -18,6 +18,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import org.jetbrains.annotations.NotNull;
 import services.UserService;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -65,7 +66,9 @@ public class DentistAddingController implements Initializable, DentistPageInterf
 
     private int counter;
 
-    private void increaseCounter(){ counter++;}
+    private void increaseCounter() {
+        counter++;
+    }
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {

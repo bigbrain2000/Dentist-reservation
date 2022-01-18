@@ -21,6 +21,7 @@ import model.User;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
 import services.UserService;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
@@ -52,13 +53,13 @@ public class LoginController implements Initializable {
     @FXML
     private ImageView visiblePasswordImage;
 
-    private static final User user =  new User();
+    private static final User user = new User();
 
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         Tooltip tooltip = createTooltipForPassword(visiblePasswordImage);
 
-        if(!Objects.equals(user.getPassword(), ""))
+        if (!Objects.equals(user.getPassword(), ""))
             visiblePasswordImage.setOnMouseClicked(e -> tooltip.setText(passwordField.getText()));
     }
 
@@ -75,7 +76,9 @@ public class LoginController implements Initializable {
         return tooltip;
     }
 
-    private static void setTooltip(Node node, Tooltip tooltip) {Tooltip.install(node, tooltip);}
+    private static void setTooltip(Node node, Tooltip tooltip) {
+        Tooltip.install(node, tooltip);
+    }
 
     @FXML
     private void handleLoginAction(javafx.event.ActionEvent event) {
@@ -85,10 +88,10 @@ public class LoginController implements Initializable {
             int aux = UserService.loginUser(user.getUsername(), user.getPassword());
             FXMLLoader Loader = new FXMLLoader();
             if (aux == 1) {
-                Loader.setLocation(getClass().getClassLoader().getResource("client/client_page.fxml"));
+                Loader.setLocation(getClass().getClassLoader().getResource("clientFXML/client_page.fxml"));
                 clearFields();
             } else if (aux == 2) {
-                Loader.setLocation(getClass().getClassLoader().getResource("dentist/dentist_page.fxml"));
+                Loader.setLocation(getClass().getClassLoader().getResource("dentistFXML/dentist_page.fxml"));
                 clearFields();
             }
             Parent viewUserLogin = Loader.load();
@@ -120,7 +123,7 @@ public class LoginController implements Initializable {
         user.setRole(UserService.getUserRole(username));
     }
 
-    private void clearFields(){
+    private void clearFields() {
         usernameField.clear();
         passwordField.clear();
     }
@@ -128,7 +131,7 @@ public class LoginController implements Initializable {
     @FXML
     private void goBackToRegistration(@NotNull javafx.event.ActionEvent event) throws IOException {
         FXMLLoader Loader = new FXMLLoader();
-        Loader.setLocation(getClass().getClassLoader().getResource("register/user_registration.fxml"));
+        Loader.setLocation(getClass().getClassLoader().getResource("registerFXML/user_registration.fxml"));
         Parent viewUserLogin = Loader.load();
         Scene loginScene = new Scene(viewUserLogin, 655, 500);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -151,6 +154,6 @@ public class LoginController implements Initializable {
     @NotNull
     @Contract(" -> new")
     public static User getLoggedUser() {
-       return new User(user.getUsername(), user.getPassword(), user.getFirstName(), user.getSecondName(), user.getPhoneNumber(), user.getAddress(), user.getRole());
+        return new User(user.getUsername(), user.getPassword(), user.getFirstName(), user.getSecondName(), user.getPhoneNumber(), user.getAddress(), user.getRole());
     }
 }

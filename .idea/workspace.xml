@@ -5,24 +5,59 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d9056ea2-ad44-487d-a219-7b91f9d85aff" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/Dentist-reservation.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Dentist-reservation.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/client/ClientAppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/client/ClientAppointmentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/client/ClientMedicalRecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/client/ClientMedicalRecordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/client/ClientPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/client/ClientPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/client/ClientPageInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/client/ClientPageInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/client/ClientProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/client/ClientProfileController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/client/ClientViewAppointmentController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/client/ClientViewAppointmentController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistAddServiceController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistAddServiceController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistAddingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistAddingController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistPageController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistPageController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistPageInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistPageInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistProfileController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistProfileController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistViewAppointmentsController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistViewAppointmentsController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistViewMedicalRecordController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistViewMedicalRecordController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistViewServicesController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/dentist/DentistViewServicesController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/login/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/login/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/controllers/register/RegistrationController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/register/RegistrationController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/DentistServicePriceException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/price/DentistServicePriceException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/FieldNotCompletedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/fields/FieldNotCompletedException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/IncorrectDateException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/date/IncorrectDateException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/MedicalRecordNotCompletedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/username/MedicalRecordNotCompletedException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/user/UserAppointmentViewAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/user/UserAppointmentViewAbstract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/controllers/user/UserProfileAbstract.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/controllers/user/UserProfileAbstract.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/date/IncorrectDateException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/date/IncorrectDateException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/username/AppointmentUsernameAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/username/AppointmentUsernameAlreadyExistsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/username/DentistServiceNameAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/username/DentistServiceNameAlreadyExistsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/username/MedicalRecordNotCompletedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/username/MedicalRecordNotCompletedException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/username/MedicalRecordUsernameAlreadyExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/username/MedicalRecordUsernameAlreadyExistsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/username/UserNotSelectedException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/username/UserNotSelectedException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/exceptions/username/UsernameDoesNotExistsException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/exceptions/username/UsernameDoesNotExistsException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Appointment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Appointment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/MedicalRecord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/MedicalRecord.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/model/Service.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/model/Service.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/AppointmentService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/AppointmentService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/DentistService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/DentistService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/FileSystemService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/FileSystemService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/services/MedicalRecordService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/MedicalRecordService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/services/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/services/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/client/client_page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/client/client_page.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/dentist/dentist_page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dentist/dentist_page.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/appointmentTablesViewStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/style/appointmentTablesViewStyle.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/client/client_appointment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/clientFXML/client_appointment.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/client/client_medical_record.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/clientFXML/client_medical_record.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/client/client_page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/clientFXML/client_page.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/client/client_profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/clientFXML/client_profile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/client/client_view_appointment.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/clientFXML/client_view_appointment.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dentist/dentist_add_services.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dentistFXML/dentist_add_services.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dentist/dentist_adding.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dentistFXML/dentist_adding.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dentist/dentist_page.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dentistFXML/dentist_page.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dentist/dentist_profile.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dentistFXML/dentist_profile.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dentist/dentist_view_appointments.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dentistFXML/dentist_view_appointments.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dentist/dentist_view_medical_record.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dentistFXML/dentist_view_medical_record.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/dentist/dentist_view_services.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/dentistFXML/dentist_view_services.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/login/user_login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/loginFXML/user_login.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/register/user_registration.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/registerFXML/user_registration.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/tableViewServiceStyle.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/style/tableViewServiceStyle.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +89,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="C:/Desktop/primele/Aplicatie-de-rezervare-locuri-de-parcare" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
@@ -64,7 +99,7 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
-    <property name="settings.editor.selected.configurable" value="reference.settings.project.maven.repository.indices" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -72,25 +107,107 @@
       <recent name="D:\Dentist-reservation\src\main\resources\Images" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Dentist-reservation\src\main\resources\style" />
       <recent name="D:\Dentist-reservation\src\main\resources\register" />
       <recent name="D:\Dentist-reservation\src\main\resources\login" />
       <recent name="D:\Dentist-reservation\src\main\resources\dentist" />
       <recent name="D:\Dentist-reservation\src\main\resources\client" />
-      <recent name="D:\Dentist-reservation\src\main\resources\images" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+  <component name="RunManager" selected="JUnit.AppointmentServiceTest">
+    <configuration name="AppointmentServiceTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Dentist-reservation" />
-      <option name="VM_PARAMETERS" value="--module-path ${PATH_TO_FX} --add-modules javafx.controls,javafx.fxml" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="servicesTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="servicesTests" />
+      <option name="MAIN_CLASS_NAME" value="servicesTests.AppointmentServiceTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AppointmentServiceTest.testConvertToDateViaSqlDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Dentist-reservation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="servicesTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="servicesTests" />
+      <option name="MAIN_CLASS_NAME" value="servicesTests.AppointmentServiceTest" />
+      <option name="METHOD_NAME" value="testConvertToDateViaSqlDate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AppointmentServiceTest.testValidDate" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Dentist-reservation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="servicesTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="servicesTests" />
+      <option name="MAIN_CLASS_NAME" value="servicesTests.AppointmentServiceTest" />
+      <option name="METHOD_NAME" value="testValidDate" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegisterControllerTest.testRegistrationIsNotSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Dentist-reservation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controllersTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controllersTest" />
+      <option name="MAIN_CLASS_NAME" value="controllersTest.RegisterControllerTest" />
+      <option name="METHOD_NAME" value="testRegistrationIsNotSuccessful(org.testfx.api.FxRobot)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RegisterControllerTest.testRegistrationIsSuccessful" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Dentist-reservation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="controllersTest.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="controllersTest" />
+      <option name="MAIN_CLASS_NAME" value="controllersTest.RegisterControllerTest" />
+      <option name="METHOD_NAME" value="testRegistrationIsSuccessful(org.testfx.api.FxRobot)" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.AppointmentServiceTest" />
+      <item itemvalue="JUnit.RegisterControllerTest.testRegistrationIsNotSuccessful" />
+      <item itemvalue="JUnit.RegisterControllerTest.testRegistrationIsSuccessful" />
+      <item itemvalue="JUnit.AppointmentServiceTest.testValidDate" />
+      <item itemvalue="JUnit.AppointmentServiceTest.testConvertToDateViaSqlDate" />
+    </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.AppointmentServiceTest" />
+        <item itemvalue="JUnit.AppointmentServiceTest.testConvertToDateViaSqlDate" />
+        <item itemvalue="JUnit.AppointmentServiceTest.testValidDate" />
+        <item itemvalue="JUnit.RegisterControllerTest.testRegistrationIsSuccessful" />
+        <item itemvalue="JUnit.RegisterControllerTest.testRegistrationIsNotSuccessful" />
       </list>
     </recent_temporary>
   </component>
@@ -120,6 +237,9 @@
       <workItem from="1641536114298" duration="1209000" />
       <workItem from="1641548413103" duration="21096000" />
       <workItem from="1641574826817" duration="759000" />
+      <workItem from="1642423918652" duration="22064000" />
+      <workItem from="1642492108916" duration="9680000" />
+      <workItem from="1642527298200" duration="461000" />
     </task>
     <servers />
   </component>

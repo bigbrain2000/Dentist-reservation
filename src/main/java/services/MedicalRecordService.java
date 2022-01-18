@@ -2,9 +2,13 @@ package services;
 
 import exceptions.username.MedicalRecordUsernameAlreadyExistsException;
 import model.MedicalRecord;
+import model.User;
 import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
+
+import java.util.List;
 import java.util.Objects;
+
 import static services.FileSystemService.getPathToFile;
 
 public class MedicalRecordService {
@@ -20,6 +24,7 @@ public class MedicalRecordService {
 
         medicalRecordRepository = database.getRepository(MedicalRecord.class);
     }
+
     public static void deleteMedicalRecordFromDB(String usernameMedicalRecord) {
         for (MedicalRecord medicalRecord : medicalRecordRepository.find())
             if (Objects.equals(usernameMedicalRecord, medicalRecord.getUsername()))
@@ -50,6 +55,10 @@ public class MedicalRecordService {
 
     public static ObjectRepository<MedicalRecord> getMedicalRecordRepository() {
         return medicalRecordRepository;
+    }
+
+    public static List<MedicalRecord> getMedicalRecordList() {
+        return medicalRecordRepository.find().toList();
     }
 
     public static Nitrite getDatabase() {

@@ -11,6 +11,7 @@ import javafx.scene.text.Text;
 import model.Service;
 import org.jetbrains.annotations.NotNull;
 import services.DentistService;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
@@ -44,7 +45,7 @@ public class DentistViewServicesController implements Initializable, DentistPage
     }
 
     @NotNull
-    private ObservableList<Service> getOfferObservableArrayList()  {
+    private ObservableList<Service> getOfferObservableArrayList() {
         ObservableList<Service> offerObservableArrayList = FXCollections.observableArrayList();
         ArrayList<Service> serviceList = new ArrayList<>();
 
@@ -62,7 +63,7 @@ public class DentistViewServicesController implements Initializable, DentistPage
         alert.setHeaderText("Are you sure you want to delete the selected service?");
 
         alert.showAndWait().ifPresent(response -> {
-            if (response == ButtonType.OK )
+            if (response == ButtonType.OK)
                 removeSelectedService();
             else
                 alert.close();
@@ -72,7 +73,7 @@ public class DentistViewServicesController implements Initializable, DentistPage
     private void removeSelectedService() {
         ObservableList<Service> selectedService = tableService.getSelectionModel().getSelectedItems();
 
-        for(Service service : selectedService)
+        for (Service service : selectedService)
             DentistService.getDentistRepository().remove(service);
 
         tableService.getItems().removeAll(tableService.getSelectionModel().getSelectedItems());  //select the wanted service

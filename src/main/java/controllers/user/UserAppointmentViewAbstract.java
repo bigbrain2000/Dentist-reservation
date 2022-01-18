@@ -5,6 +5,7 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
 import model.Appointment;
 import org.jetbrains.annotations.NotNull;
+
 import java.text.SimpleDateFormat;
 import java.util.Date;
 
@@ -19,10 +20,9 @@ public abstract class UserAppointmentViewAbstract {
             @Override
             protected void updateItem(java.util.Date item, boolean empty) {
                 super.updateItem(item, empty);
-                if(empty) {
+                if (empty) {
                     setText(null);
-                }
-                else {
+                } else {
                     setText(FORMAT.format(item));
                 }
             }
