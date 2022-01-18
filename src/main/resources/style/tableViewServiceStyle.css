@@ -1,13 +1,19 @@
-.table-view{
+.table-view {
     -fx-background-color: transparent;
+    -fx-font-size: 14px;
+}
+
+.table-column {
+    -fx-alignment: CENTER;
+    -fx-font-size: 14px;
 }
 
 .table-view .corner {
     -fx-background-color: transparent;
 }
 
-.table-view .column-header-background{
-    -fx-background-color: linear-gradient(to bottom, #1dbbdd44, #93f9b944);
+.table-view .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #7B68EE, #483D8B);
     -fx-background-radius: 7px 7px 0px 0px;
     -fx-background-insets: 0 11px 0 0;
     -fx-padding: 0 0 5px 0;
@@ -18,23 +24,24 @@
     -fx-background-color: transparent;
 }
 
-.table-view .column-header-background .label{
+.table-view .column-header-background .label {
     -fx-background-color: transparent;
     -fx-text-fill: white;
 }
 
 
-.table-view .table-cell{
+.table-view .table-cell {
     -fx-text-fill: white;
     -fx-padding: 2 0 2 10px;
 }
 
-.table-row-cell:odd{
+.table-row-cell:odd {
     -fx-background-color: #93f9b911;
     -fx-background-insets: 0, 0 0 1 0;
     -fx-padding: 0.0em;
 }
-.table-row-cell:even{
+
+.table-row-cell:even {
     -fx-background-color: #1dbbdd11;
     -fx-background-insets: 0, 0 0 1 0;
     -fx-padding: 0.0em;
@@ -61,9 +68,10 @@
     -fx-padding: 2;
 }
 
-.table-view .virtual-flow .scroll-bar:vertical .thumb{
-    -fx-background-color:  linear-gradient(to bottom, #7B68EE,#483D8B);
+.table-view .virtual-flow .scroll-bar:vertical .thumb {
+    -fx-background-color: linear-gradient(to bottom, #7B68EE, #483D8B);
 }
+
 .table-view .virtual-flow .scroll-bar:horizontal .thumb {
-    -fx-background-color:  linear-gradient(to right, #7B68EE, #483D8B);
+    -fx-background-color: linear-gradient(to right, #7B68EE, #483D8B);
 }

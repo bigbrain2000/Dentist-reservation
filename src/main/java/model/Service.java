@@ -15,7 +15,8 @@ public class Service {
         this.price = price;
     }
 
-    public Service() {}
+    public Service() {
+    }
 
     public String getName() {
         return name;

@@ -14,7 +14,8 @@ public class Appointment {
     private Date appointmentDate;
     private boolean checkMedicalRecord;
 
-    public Appointment() {}
+    public Appointment() {
+    }
 
     public Appointment(String username, String firstName, String secondName, String dentistName, String serviceName, float servicePrice, Date appointmentDate, boolean checkMedicalRecord) {
         this.username = username;

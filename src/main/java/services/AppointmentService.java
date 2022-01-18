@@ -7,8 +7,10 @@ import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.jetbrains.annotations.Contract;
 import org.jetbrains.annotations.NotNull;
+
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
 import static services.FileSystemService.getPathToFile;
@@ -31,21 +33,21 @@ public class AppointmentService {
         checkUsernameAlreadyExists(username);
         checkValidDate(appointmentDate);
 
-        appointmentRepository.insert(new Appointment(username, firstName, secondName, dentistName,serviceName, servicePrice, appointmentDate, checkMedicalRecord));
+        appointmentRepository.insert(new Appointment(username, firstName, secondName, dentistName, serviceName, servicePrice, appointmentDate, checkMedicalRecord));
     }
 
-    private static void checkUsernameAlreadyExists(String username) throws AppointmentUsernameAlreadyExistsException{
-        for(Appointment appointment : appointmentRepository.find())
-            if(Objects.equals(username, appointment.getUsername()))
-                throw  new AppointmentUsernameAlreadyExistsException(username);
+    public static void checkUsernameAlreadyExists(String username) throws AppointmentUsernameAlreadyExistsException {
+        for (Appointment appointment : appointmentRepository.find())
+            if (Objects.equals(username, appointment.getUsername()))
+                throw new AppointmentUsernameAlreadyExistsException(username);
     }
 
-    private static void checkValidDate(@NotNull Date date) throws IncorrectDateException {
+    public static void checkValidDate(@NotNull Date date) throws IncorrectDateException {
         LocalDate currentLocalDateTime = java.time.LocalDate.now();
         Date currentDate = convertToDateViaSqlDate(currentLocalDateTime);
 
-        if(!date.after(currentDate)) {
-            throw  new IncorrectDateException();
+        if (!date.after(currentDate)) {
+            throw new IncorrectDateException();
         }
     }
 
@@ -59,7 +61,13 @@ public class AppointmentService {
         return appointmentRepository;
     }
 
+    public static List<Appointment> getAppointmentList() {
+        return appointmentRepository.find().toList();
+    }
+
     public static Nitrite getDatabase() {
         return database;
     }
+
+
 }

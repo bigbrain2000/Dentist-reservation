@@ -14,6 +14,7 @@ import javafx.scene.text.Text;
 import javafx.stage.Stage;
 import org.jetbrains.annotations.NotNull;
 import services.UserService;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -64,7 +65,7 @@ public class RegistrationController implements Initializable {
     }
 
     @FXML
-    private void handleRegisterAction()  {
+    private void handleRegisterAction() {
         try {
             insertUserDataIntoDB();
             registrationMessage.setText("Account created successfully!");
@@ -73,9 +74,9 @@ public class RegistrationController implements Initializable {
         } catch (UsernameAlreadyExistsException e) {
             registrationMessage.setText(e.getMessage());
             usernameField.clear();
-        }catch (FieldNotCompletedException e) {
+        } catch (FieldNotCompletedException e) {
             registrationMessage.setText(e.getMessage());
-        }catch (WeakPasswordException e) {
+        } catch (WeakPasswordException e) {
             registrationMessage.setText(e.getMessage());
             passwordField.clear();
         }
@@ -104,7 +105,7 @@ public class RegistrationController implements Initializable {
     @FXML
     private void handleLoginAction(@NotNull javafx.event.ActionEvent event) throws IOException {
         FXMLLoader Loader = new FXMLLoader();
-        Loader.setLocation(getClass().getClassLoader().getResource("login/user_login.fxml"));
+        Loader.setLocation(getClass().getClassLoader().getResource("loginFXML/user_login.fxml"));
         Parent viewUserLogin = Loader.load();
         Scene loginScene = new Scene(viewUserLogin, 656, 500);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

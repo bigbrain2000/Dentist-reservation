@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="500.0" prefWidth="655.0" style="-fx-border-width: 4; -fx-background-color: #00BFFF;"
+            xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="controllers.register.RegistrationController">
+    <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="31.0" layoutY="27.0" pickOnBounds="true"
+               preserveRatio="true">
+        <Image url="@../images/ToothPicture.png"/>
+    </ImageView>
+    <Label layoutX="273.0" layoutY="27.0" prefHeight="27.0" prefWidth="302.0" style="-fx-background-color: transparent;"
+           text="Welcome to our Dental Application">
+        <font>
+            <Font size="18.0"/>
+        </font>
+    </Label>
+    <TextField fx:id="usernameField" layoutX="251.0" layoutY="107.0" prefHeight="30.0" prefWidth="149.0"
+               promptText="Username">
+        <font>
+            <Font size="16.0"/>
+        </font>
+    </TextField>
+    <PasswordField fx:id="passwordField" layoutX="470.0" layoutY="107.0" prefHeight="35.0" prefWidth="149.0"
+                   promptText="Password">
+        <font>
+            <Font size="16.0"/>
+        </font>
+    </PasswordField>
+    <HBox layoutX="570.0" prefHeight="40.0" prefWidth="97.0">
+        <Button fx:id="minimizeField" alignment="TOP_RIGHT" contentDisplay="BOTTOM" mnemonicParsing="false"
+                onAction="#minimizeWindow" prefHeight="4.0" prefWidth="20.0" style="-fx-background-color: transparent;"
+                text="-">
+            <HBox.margin>
+                <Insets left="30.0" top="-5.0"/>
+            </HBox.margin>
+            <padding>
+                <Insets right="10.0"/>
+            </padding>
+            <font>
+                <Font size="24.0"/>
+            </font>
+        </Button>
+        <Button fx:id="closeField" alignment="TOP_RIGHT" contentDisplay="BOTTOM" mnemonicParsing="false"
+                onAction="#closeWindow" style="-fx-background-color: transparent;" text="X">
+            <HBox.margin>
+                <Insets/>
+            </HBox.margin>
+            <font>
+                <Font size="14.0"/>
+            </font>
+        </Button>
+    </HBox>
+    <TextField fx:id="addressField" layoutX="251.0" layoutY="161.0" prefHeight="30.0" prefWidth="367.0"
+               promptText="Address">
+        <font>
+            <Font size="16.0"/>
+        </font>
+    </TextField>
+    <TextField fx:id="firstNameField" layoutX="251.0" layoutY="220.0" prefHeight="30.0" prefWidth="149.0"
+               promptText="First name">
+        <font>
+            <Font size="16.0"/>
+        </font>
+    </TextField>
+    <TextField fx:id="secondNameField" layoutX="470.0" layoutY="218.0" prefHeight="40.0" prefWidth="149.0"
+               promptText="Second name">
+        <font>
+            <Font size="16.0"/>
+        </font>
+    </TextField>
+    <TextField fx:id="phoneNumberField" layoutX="251.0" layoutY="277.0" prefHeight="30.0" prefWidth="149.0"
+               promptText="Phone number">
+        <font>
+            <Font size="16.0"/>
+        </font>
+    </TextField>
+    <Label layoutX="31.0" layoutY="453.0" prefHeight="25.0" prefWidth="452.0" style="-fx-background-color: #C0C0C0;"
+           text="Note : password needs to have at least 8 characters, 1 digit and 1 uppercase">
+        <font>
+            <Font name="System Bold Italic" size="12.0"/>
+        </font>
+    </Label>
+    <Text fx:id="registrationMessage" fill="RED" layoutX="252.0" layoutY="411.0" wrappingWidth="389.0">
+        <font>
+            <Font name="Times New Roman Bold Italic" size="14.0"/>
+        </font>
+    </Text>
+    <ChoiceBox fx:id="role" focusTraversable="false" layoutX="469.0" layoutY="295.0" prefWidth="150.0"
+               style="-fx-background-radius: 50; -fx-background-color: white;"/>
+    <Button fx:id="RegisterButton" layoutX="522.0" layoutY="346.0" mnemonicParsing="false"
+            onAction="#handleRegisterAction" prefHeight="25.0" prefWidth="97.0" text="Register">
+        <font>
+            <Font size="18.0"/>
+        </font>
+    </Button>
+    <Button fx:id="BackButton" layoutX="251.0" layoutY="346.0" mnemonicParsing="false" onAction="#goBackToLogin"
+            prefHeight="25.0" prefWidth="97.0" text="Back">
+        <font>
+            <Font size="18.0"/>
+        </font>
+    </Button>
+</AnchorPane>

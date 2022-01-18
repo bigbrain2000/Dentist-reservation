@@ -14,6 +14,7 @@ import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 import model.MedicalRecord;
 import org.jetbrains.annotations.NotNull;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -46,7 +47,7 @@ public class DentistViewMedicalRecordController implements Initializable {
 
         setFieldNotEditable();
 
-        for(MedicalRecord medicalRecord : DentistViewAppointmentsController.getMedicalRecordArrayList()){
+        for (MedicalRecord medicalRecord : DentistViewAppointmentsController.getMedicalRecordArrayList()) {
             usernameField.setText(medicalRecord.getUsername() + "'s medical record");
             usernameField.setFont(Font.font("Verdana", FontWeight.BOLD, 15));
 
@@ -70,7 +71,7 @@ public class DentistViewMedicalRecordController implements Initializable {
     @FXML
     private void goBackToaAppointmentsPage(@NotNull ActionEvent event) throws IOException {
         FXMLLoader Loader = new FXMLLoader();
-        Loader.setLocation(getClass().getClassLoader().getResource("dentist/dentist_view_appointments.fxml"));
+        Loader.setLocation(getClass().getClassLoader().getResource("dentistFXML/dentist_view_appointments.fxml"));
         Parent viewUserLogin = Loader.load();
         Scene loginScene = new Scene(viewUserLogin, 802, 432);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

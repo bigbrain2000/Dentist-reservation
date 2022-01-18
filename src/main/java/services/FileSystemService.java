@@ -7,7 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 
 public class FileSystemService {
-    public static  String APPLICATION_FOLDER = ".dental-app";
+    public static String APPLICATION_FOLDER = ".dental-app";
     private static final String USER_FOLDER = System.getProperty("user.home");
 
     @NotNull

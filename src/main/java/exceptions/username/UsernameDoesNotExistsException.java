@@ -2,14 +2,14 @@ package exceptions.username;
 
 public class UsernameDoesNotExistsException extends Exception {
 
-    private String username;
+    private final String USERNAME;
 
     public UsernameDoesNotExistsException(String username) {
         super("An account with that username doesn't exists!");
-        this.username = username;
+        this.USERNAME = username;
     }
 
     public String getUsername() {
-        return username;
+        return USERNAME;
     }
 }

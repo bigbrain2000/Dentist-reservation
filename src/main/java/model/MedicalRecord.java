@@ -1,6 +1,7 @@
 package model;
 
 import org.dizitart.no2.objects.Id;
+
 import java.util.Objects;
 
 public class MedicalRecord {
@@ -19,7 +20,8 @@ public class MedicalRecord {
         this.vaccinated = vaccinated;
     }
 
-    public MedicalRecord(){}
+    public MedicalRecord() {
+    }
 
     public String getUsername() {
         return username;

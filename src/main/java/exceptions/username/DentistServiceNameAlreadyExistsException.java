@@ -1,6 +1,6 @@
 package exceptions.username;
 
-public class DentistServiceNameAlreadyExistsException extends Exception{
+public class DentistServiceNameAlreadyExistsException extends Exception {
     private String name;
 
     public DentistServiceNameAlreadyExistsException(String name) {

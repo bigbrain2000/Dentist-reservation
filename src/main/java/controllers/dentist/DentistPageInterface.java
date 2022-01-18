@@ -8,6 +8,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import org.jetbrains.annotations.NotNull;
+
 import java.io.IOException;
 
 public interface DentistPageInterface {
@@ -15,7 +16,7 @@ public interface DentistPageInterface {
     @FXML
     default void goBackToDentistPage(@NotNull ActionEvent event) throws IOException {
         FXMLLoader Loader = new FXMLLoader();
-        Loader.setLocation(getClass().getClassLoader().getResource("dentist/dentist_page.fxml"));
+        Loader.setLocation(getClass().getClassLoader().getResource("dentistFXML/dentist_page.fxml"));
         Parent viewUserLogin = Loader.load();
         Scene loginScene = new Scene(viewUserLogin, 1098, 512);
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

@@ -12,6 +12,7 @@ import model.MedicalRecord;
 import model.User;
 import org.jetbrains.annotations.NotNull;
 import services.MedicalRecordService;
+
 import java.io.IOException;
 import java.net.URL;
 import java.util.Objects;
@@ -60,7 +61,7 @@ public class ClientMedicalRecordController implements Initializable, ClientPageI
     }
 
     private void deleteMedicalRecordBasedOnOptions() {
-        if(MedicalRecordService.isMedicalRecordCompleted(loggedUser.getUsername())) {
+        if (MedicalRecordService.isMedicalRecordCompleted(loggedUser.getUsername())) {
             Alert alert = new Alert(Alert.AlertType.CONFIRMATION);
             alert.setTitle("Delete medical record");
             alert.setHeaderText("You already have a medical record!\nPress OK if you want to delete this and make a new one." +
@@ -88,16 +89,16 @@ public class ClientMedicalRecordController implements Initializable, ClientPageI
         vaccinatedComboBox.setValue(null);
     }
 
-    private void showDataForExistingMedicalRecord(@NotNull ChoiceBox<String> choiceBoxFirstQuestion, @NotNull ChoiceBox<String>  choiceBoxSecondQuestion,
-                                                        @NotNull ChoiceBox<String>  choiceBoxThirdQuestion, @NotNull ChoiceBox<String>  choiceBoxFourthQuestion, @NotNull ComboBox<String>  vaccinatedComboBox) {
+    private void showDataForExistingMedicalRecord(@NotNull ChoiceBox<String> choiceBoxFirstQuestion, @NotNull ChoiceBox<String> choiceBoxSecondQuestion,
+                                                  @NotNull ChoiceBox<String> choiceBoxThirdQuestion, @NotNull ChoiceBox<String> choiceBoxFourthQuestion, @NotNull ComboBox<String> vaccinatedComboBox) {
 
         for (MedicalRecord medicalRecord : MedicalRecordService.getMedicalRecordRepository().find())
             if (Objects.equals(loggedUser.getUsername(), medicalRecord.getUsername()))
                 setFieldsForExistingMedicalRecord(medicalRecord, choiceBoxFirstQuestion, choiceBoxSecondQuestion, choiceBoxThirdQuestion, choiceBoxFourthQuestion, vaccinatedComboBox);
     }
 
-    private void setFieldsForExistingMedicalRecord(@NotNull MedicalRecord medicalRecord, @NotNull ChoiceBox<String>  choiceBoxFirstQuestion, @NotNull ChoiceBox<String>  choiceBoxSecondQuestion,
-                                                          @NotNull ChoiceBox<String>  choiceBoxThirdQuestion, @NotNull ChoiceBox<String>  choiceBoxFourthQuestion, @NotNull ComboBox<String>  vaccinatedComboBox) {
+    private void setFieldsForExistingMedicalRecord(@NotNull MedicalRecord medicalRecord, @NotNull ChoiceBox<String> choiceBoxFirstQuestion, @NotNull ChoiceBox<String> choiceBoxSecondQuestion,
+                                                   @NotNull ChoiceBox<String> choiceBoxThirdQuestion, @NotNull ChoiceBox<String> choiceBoxFourthQuestion, @NotNull ComboBox<String> vaccinatedComboBox) {
 
         choiceBoxFirstQuestion.setValue(medicalRecord.getAnswerFirstQuestion());
         choiceBoxSecondQuestion.setValue(medicalRecord.getAnswerSecondQuestion());
@@ -108,7 +109,7 @@ public class ClientMedicalRecordController implements Initializable, ClientPageI
 
     @FXML
     private void createNewMedicalRecord() {
-        try{
+        try {
             insertMedicalRecordIntoDB();
             clearFields();
             medicalRecordMessage.setText("Medical record successfully added!");
@@ -125,9 +126,9 @@ public class ClientMedicalRecordController implements Initializable, ClientPageI
     }
 
     private void checkIfFieldsAreCompleted() throws FieldNotCompletedException {
-        if(choiceBoxFirstQuestion.getValue() == null || choiceBoxSecondQuestion.getValue() == null || choiceBoxThirdQuestion.getValue() == null
+        if (choiceBoxFirstQuestion.getValue() == null || choiceBoxSecondQuestion.getValue() == null || choiceBoxThirdQuestion.getValue() == null
                 || choiceBoxFourthQuestion.getValue() == null || vaccinatedComboBox.getValue() == null)
-            throw  new FieldNotCompletedException();
+            throw new FieldNotCompletedException();
     }
 
     @Override

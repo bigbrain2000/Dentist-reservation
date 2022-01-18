@@ -10,12 +10,15 @@ import org.dizitart.no2.Nitrite;
 import org.dizitart.no2.objects.ObjectRepository;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+
 import java.nio.charset.StandardCharsets;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 import java.util.regex.Pattern;
+
 import static services.FileSystemService.getPathToFile;
 
 public class UserService {
@@ -80,17 +83,17 @@ public class UserService {
 
     public static void addUser(String username, String password, String firstName,
                                String secondName, String phoneNumber, String address, String role) throws UsernameAlreadyExistsException, FieldNotCompletedException, WeakPasswordException {
-        checkAllFieldsAreCompleted(username, password, firstName, secondName,phoneNumber, role);
+        checkAllFieldsAreCompleted(username, password, firstName, secondName, phoneNumber, address, role);
         checkUserAlreadyExists(username);
         checkPasswordFormatException(password);
         userRepository.insert(new User(username, encodePassword(username, password), firstName, secondName, phoneNumber, address, role));
     }
 
     public static void checkAllFieldsAreCompleted(@NotNull String username, String password, String firstName,
-                                                  String secondName, String phoneNumber, String role) throws FieldNotCompletedException {
+                                                  String secondName, String phoneNumber, String address, String role) throws FieldNotCompletedException {
 
         if (username.trim().isEmpty() || password.trim().isEmpty() || firstName.trim().isEmpty() || secondName.trim().isEmpty()
-                || phoneNumber.trim().isEmpty() || role.trim().isEmpty())
+                || phoneNumber.trim().isEmpty() || address.trim().isEmpty() || role.trim().isEmpty())
             throw new FieldNotCompletedException();
     }
 
@@ -101,13 +104,12 @@ public class UserService {
         }
     }
 
-    public static boolean stringContainsNumber(String s)
-    {
-        return Pattern.compile( "[0-9]" ).matcher( s ).find();
+    public static boolean stringContainsNumber(String s) {
+        return Pattern.compile("[0-9]").matcher(s).find();
     }
-    public static boolean stringContainsUpperCase(String s)
-    {
-        return Pattern.compile( "[A-Z]" ).matcher( s ).find();
+
+    public static boolean stringContainsUpperCase(String s) {
+        return Pattern.compile("[A-Z]").matcher(s).find();
     }
 
     public static void checkPasswordFormatException(String password) throws WeakPasswordException {
@@ -135,10 +137,10 @@ public class UserService {
         boolean flag = false;
         for (User user : userRepository.find())
             if (Objects.equals(username, user.getUsername()))
-                if (Objects.equals(encodePassword(username,password), user.getPassword()))
+                if (Objects.equals(encodePassword(username, password), user.getPassword()))
                     flag = true;
 
-        if(!flag)
+        if (!flag)
             throw new WrongPasswordException();
     }
 
@@ -150,13 +152,13 @@ public class UserService {
                 break;
             }
 
-        if(!flag)
+        if (!flag)
             throw new UsernameDoesNotExistsException(username);
     }
 
     public static int loginUser(String username, String password) throws UsernameDoesNotExistsException, WrongPasswordException, FieldNotCompletedException {
         checkUserDoesAlreadyExist(username);
-        checkPasswordInOrderToLogin(password,username);
+        checkPasswordInOrderToLogin(password, username);
 
         String encryptedPassword = encodePassword(username, password);
 
@@ -183,7 +185,7 @@ public class UserService {
     public static ArrayList<String> getDentistsFirstNameList() {
         ArrayList<String> dentistFirstNameList = new ArrayList<>();
 
-        for(User user : userRepository.find())
+        for (User user : userRepository.find())
             if (Objects.equals("Dentist", user.getRole()))
                 dentistFirstNameList.add(user.getFirstName());
 
@@ -212,10 +214,15 @@ public class UserService {
         return md;
     }
 
-    public static ObjectRepository<User>  getUsers() {
+    public static ObjectRepository<User> getUsers() {
         return userRepository;
     }
+
     public static Nitrite getDatabase() {
         return database;
+    }
+
+    public static List<User> getUserList() {
+        return userRepository.find().toList();
     }
 }
