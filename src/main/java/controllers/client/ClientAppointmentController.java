@@ -61,6 +61,7 @@ public class ClientAppointmentController implements Initializable, ClientPageInt
     @Override
     public void initialize(URL location, ResourceBundle resources) {
         setFieldsForAppointmentBasedOnUserName(firstNameField, secondNameField);
+        dentistServicePriceField.setEditable(false);
 
         dentistNameChoiceBox.getItems().addAll(UserService.getDentistsFirstNameList());  //add first name of all Dentists in the ChoiceBox
         dentistServicesChoiceBox.getItems().addAll(DentistService.getDentistServiceNameList()); //add all service names in the ChoiceBox
